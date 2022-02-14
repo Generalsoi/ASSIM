@@ -1,0 +1,8 @@
+.sidebar{
+    flex: 1;
+    color: #fff;
+    background: darkorchid;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
