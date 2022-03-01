@@ -37,7 +37,7 @@
 }
 
 .content-one>div:nth-child(2){
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 
 .content-one p{
@@ -48,4 +48,41 @@
     font-weight: 700;
     color: #111111;
     margin: 0 0.5rem;
+}
+
+.signupformone h4{
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.signupformone p{
+    font-size: 0.875rem;
+    color: #000000;
+    margin-bottom: 3rem;
+}
+
+.form-one div{
+    width: 70%;
+}
+
+.form-one div input{
+    width: 100%;
+    height: 48px;
+    margin-bottom: 1rem;
+    padding-left: 20px;
+}
+
+.form-one div:first-child{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-one div:first-child input{
+    width: 48%;
+}
+
+.form-one div:last-child button{
+    width: 100%;
+    height: 48px;
 }
