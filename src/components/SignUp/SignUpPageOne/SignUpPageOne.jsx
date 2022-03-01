@@ -1,6 +1,7 @@
 import React from "react";
 import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
+import Arrow from "../../../assets/images/arrowicon.png";
 
 const SignUpPageOne = () => {
   return (
@@ -19,7 +20,7 @@ const SignUpPageOne = () => {
       </div>
 
       <div className="signupcontents">
-        <div className="content-one content">
+        <div className="content-one contentone">
           <div>
             <h2>Let's get your</h2>
             <h2>profile ready!</h2>
@@ -42,14 +43,14 @@ const SignUpPageOne = () => {
           </div>
         </div>
 
-        <div className="signupformone content">
+        <div className="signupformone contenttwo">
           <h4>Create Account</h4>
-          <p>Let's get started</p>
+          <p>Let's get started.</p>
 
           <div className="form-one">
             <form action="">
               <div>
-                <input type="text" placeholder="First Name" />
+                <input type="text" placeholder="First Name" id="" />
                 <input type="text" placeholder="Last Name" id="" />
               </div>
               <div>
@@ -66,7 +67,7 @@ const SignUpPageOne = () => {
               </div>
 
               <div>
-                <button type="submit">Next </button>
+                <button type="submit">Next</button>
               </div>
             </form>
           </div>
