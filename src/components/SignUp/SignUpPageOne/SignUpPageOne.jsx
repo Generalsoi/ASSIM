@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
 import Arrow from "../../../assets/images/arrowicon.png";
@@ -67,7 +68,9 @@ const SignUpPageOne = () => {
               </div>
 
               <div>
-                <button type="submit">Next</button>
+                <Link to="/studentSignUpPageTwo">
+                  <button type="submit">Next</button>
+                </Link>
               </div>
             </form>
           </div>
