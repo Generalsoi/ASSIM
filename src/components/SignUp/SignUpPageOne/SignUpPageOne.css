@@ -19,3 +19,33 @@
     color: #111111;
     text-decoration: none;
 }
+
+.signup-pageone .signupcontents{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3rem;
+}
+
+.signup-pageone .signupcontents .content{
+    width: 50%;
+}
+
+.content-one h2{
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.content-one>div:nth-child(2){
+    margin-top: 4rem;
+}
+
+.content-one p{
+    font-size: 0.7rem;
+}
+
+.content-one p span a{
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0.5rem;
+}

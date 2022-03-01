@@ -17,6 +17,61 @@ const SignUpPageOne = () => {
           </span>
         </p>
       </div>
+
+      <div className="signupcontents">
+        <div className="content-one content">
+          <div>
+            <h2>Let's get your</h2>
+            <h2>profile ready!</h2>
+          </div>
+
+          <div>
+            <p>
+              By creating an account, I confirm that I have read and understand
+            </p>
+            <p>
+              the
+              <span>
+                <a href="/">ASSIM Privacy Policy</a>
+              </span>
+              and
+              <span>
+                <a href="/">Terms of Use</a>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="signupformone content">
+          <h4>Create Account</h4>
+          <p>Let's get started</p>
+
+          <div className="form-one">
+            <form action="">
+              <div>
+                <input type="text" placeholder="First Name" />
+                <input type="text" placeholder="Last Name" id="" />
+              </div>
+              <div>
+                <input type="text" placeholder="class" />
+              </div>
+              <div>
+                <input type="tel" placeholder="Phone number" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email address" />
+              </div>
+              <div>
+                <input type="password" placeholder="Password" />
+              </div>
+
+              <div>
+                <button type="submit">Next </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
