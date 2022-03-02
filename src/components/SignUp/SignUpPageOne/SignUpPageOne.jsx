@@ -55,7 +55,10 @@ const SignUpPageOne = () => {
                 <input type="text" placeholder="Last Name" id="" />
               </div>
               <div>
-                <input type="text" placeholder="class" />
+                {/* <input type="text" placeholder="class" /> */}
+                <select name="class" id="class">
+                  <option value="class">Class</option>
+                </select>
               </div>
               <div>
                 <input type="tel" placeholder="Phone number" />
