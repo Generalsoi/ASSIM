@@ -1,5 +1,5 @@
 import React from "react";
-import "./Homepage.css";
+import "./Dashboard.css";
 import Sidebar from "../Sidebar/Sidebar";
 
 const Homepage = () => {

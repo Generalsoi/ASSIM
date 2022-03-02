@@ -1,0 +1,46 @@
+.complete-signup{
+    padding: 1% 7%;
+}
+
+.completed-signup-contents{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.completed-signup-contents h2, .completed-signup-contents p{
+    color: #000000;
+}
+
+.completed-signup-contents img{
+    margin-bottom: 4rem;
+    width: 40%;
+}
+
+.completed-signup-contents h2{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.first-p{
+    font-size: 0.813rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+.second-p{
+    font-size: 0.625rem;
+    font-weight: 300;
+}
+
+.completed-signup-btn button{
+    background: #7777F9;
+    border-radius: 3px;
+    width: 15rem;
+    height: 3rem;
+    margin-top: 3rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.813rem;
+}

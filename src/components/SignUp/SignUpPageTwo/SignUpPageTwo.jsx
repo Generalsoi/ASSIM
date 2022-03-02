@@ -13,12 +13,12 @@ const SignUpPageTwo = () => {
         </Link>
       </div>
 
-      <div className="signupconents">
-        <div className="contentOne">
+      <div className="signupcontents">
+        <div className="contentOne content">
           <img src={LargeLogo} alt="large-assim-logo" />
         </div>
 
-        <div className="contentTwo">
+        <div className="contentTwo content">
           <h4>Basic School Information</h4>
 
           <div className="form-two">
@@ -39,7 +39,7 @@ const SignUpPageTwo = () => {
                 />
               </div>
               <div>
-                <Link to="/">
+                <Link to="/studentSignUpPageThree">
                   <button type="submit">Next</button>
                 </Link>
               </div>
