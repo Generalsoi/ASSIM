@@ -24,22 +24,30 @@ const SignUpPageTwo = () => {
           <div className="form-two">
             <form action="">
               <div>
-                <input type="text" placeholder="Gender" />
+                <select name="gender" id="gender">
+                  <option value="gender">Gender</option>
+                </select>
               </div>
               <div>
                 <input type="text" placeholder="Address" />
               </div>
               <div>
-                <input type="text" placeholder="State of Origin" />
+                <select name="state-of-origin" id="origin">
+                  <option value="origin">State of Origin</option>
+                </select>
               </div>
               <div>
-                <input type="text" placeholder="Local Government Area" />
+                <select name="lga" id="lga">
+                  <option value="lga">Local Government Area</option>
+                </select>
               </div>
               <div>
                 <input type="text" placeholder="Name of Your School" />
               </div>
               <div>
-                <input type="text" placeholder="Number of Subjects Offered" />
+                <select name="subjects" id="subjects">
+                  <option value="subject">No. of subjects offered</option>
+                </select>
               </div>
               <div>
                 <Link to="/completeSignUp">

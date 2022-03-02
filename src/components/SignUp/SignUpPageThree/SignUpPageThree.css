@@ -34,7 +34,7 @@
     width: 70%;
 }
 
-.content-Two .form-two div input{
+.content-Two .form-two div input, .content-Two .form-two div select{
     width: 100%;
     height: 48px;
     margin-bottom: 1rem;
@@ -43,7 +43,17 @@
     border: 1px solid #F0F0F0;
 }
 
-.content-Two .form-two div input:focus{
+.content-Two .form-two div select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../../../assets/images/dropdown.png');
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+}
+
+.content-Two .form-two div input:focus, .content-Two .form-two div select:focus{
     outline: none;
     border: 1px solid #6363C7;
     box-sizing: border-box;
