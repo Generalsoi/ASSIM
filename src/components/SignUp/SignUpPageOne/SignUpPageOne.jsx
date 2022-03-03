@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
 import Arrow from "../../../assets/images/arrowicon.png";
 
 const SignUpPageOne = () => {
+  const { register, handleSubmit } = useForm();
+
   return (
     <div className="signup-pageone">
       <div className="header">
@@ -51,23 +54,44 @@ const SignUpPageOne = () => {
           <div className="form-one">
             <form action="">
               <div>
-                <input type="text" placeholder="First Name" id="" />
-                <input type="text" placeholder="Last Name" id="" />
+                <input
+                  {...register("studtFirstName")}
+                  type="text"
+                  placeholder="First Name"
+                  id=""
+                />
+                <input
+                  {...register("studtLastName")}
+                  type="text"
+                  placeholder="Last Name"
+                  id=""
+                />
               </div>
               <div>
-                {/* <input type="text" placeholder="class" /> */}
-                <select name="class" id="class">
+                <select {...register("studtClass")} id="class">
                   <option value="class">Class</option>
                 </select>
               </div>
               <div>
-                <input type="tel" placeholder="Phone number" />
+                <input
+                  {...register("studtPhoneNo")}
+                  type="tel"
+                  placeholder="Phone number"
+                />
               </div>
               <div>
-                <input type="email" placeholder="Email address" />
+                <input
+                  {...register("studtEmail")}
+                  type="email"
+                  placeholder="Email address"
+                />
               </div>
               <div>
-                <input type="password" placeholder="Password" />
+                <input
+                  {...register("studtPassword")}
+                  type="password"
+                  placeholder="Password"
+                />
               </div>
 
               <div>
