@@ -8,11 +8,15 @@ import Logo from "../../../assets/images/Logo.png";
 import Arrow from "../../../assets/images/arrowicon.png";
 
 const SignUpPageOne = () => {
-  const schema = yup.object().shape({
+  const schema = yup.object({
     studtFirstName: yup.string().required(),
     studtLastName: yup.string().required(),
     studtClass: yup.string().required(),
-    studtPhoneNo: yup.number().required(),
+    studtPhoneNo: yup
+      .number()
+      .required()
+      .positive()
+      .min(11, "Enter complete phone number"),
     studtEmail: yup.string().email().required(),
     studtPassword: yup.string().required().min(5),
   });
@@ -116,10 +120,7 @@ const SignUpPageOne = () => {
               </div>
 
               <div>
-                {/* to="/studentSignUpPageTwo" */}
-                {/* <Link> */}
                 <button type="submit">Next</button>
-                {/* </Link> */}
               </div>
             </form>
           </div>
