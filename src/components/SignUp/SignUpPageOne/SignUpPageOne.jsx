@@ -1,12 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
 import Arrow from "../../../assets/images/arrowicon.png";
 
 const SignUpPageOne = () => {
-  const { register, handleSubmit } = useForm();
+  const schema = yup.object().shape({
+    studtFirstName: yup.string().required(),
+    studtLastName: yup.string().required(),
+    studtClass: yup.string().required(),
+    studtPhoneNo: yup.number().required(),
+    studtEmail: yup.string().email().required(),
+    studtPassword: yup.string().required().min(5),
+  });
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className="signup-pageone">
@@ -52,19 +73,19 @@ const SignUpPageOne = () => {
           <p>Let's get started.</p>
 
           <div className="form-one">
-            <form action="">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <input
                   {...register("studtFirstName")}
                   type="text"
                   placeholder="First Name"
-                  id=""
+                  id="studFirstName"
                 />
                 <input
                   {...register("studtLastName")}
                   type="text"
                   placeholder="Last Name"
-                  id=""
+                  id="studLastName"
                 />
               </div>
               <div>
@@ -95,9 +116,10 @@ const SignUpPageOne = () => {
               </div>
 
               <div>
-                <Link to="/studentSignUpPageTwo">
-                  <button type="submit">Next</button>
-                </Link>
+                {/* to="/studentSignUpPageTwo" */}
+                {/* <Link> */}
+                <button type="submit">Next</button>
+                {/* </Link> */}
               </div>
             </form>
           </div>
