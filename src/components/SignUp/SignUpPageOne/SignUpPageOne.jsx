@@ -6,6 +6,7 @@ import * as yup from "yup";
 import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
 import Arrow from "../../../assets/images/arrowicon.png";
+import dataObject from "../data.js";
 
 const SignUpPageOne = () => {
   const schema = yup.object({
@@ -14,7 +15,7 @@ const SignUpPageOne = () => {
     studtClass: yup.string().required(),
     studtPhoneNo: yup.number().required().min(11).positive(),
     studtEmail: yup.string().email().required(),
-    studtPassword: yup.string().required().min(5),
+    studtPassword: yup.string().required().min(6),
   });
 
   const {
@@ -29,6 +30,7 @@ const SignUpPageOne = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    dataObject.push(data);
     navigate("/studentSignUpPageTwo");
   };
 
