@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -12,11 +12,7 @@ const SignUpPageOne = () => {
     studtFirstName: yup.string().required(),
     studtLastName: yup.string().required(),
     studtClass: yup.string().required(),
-    studtPhoneNo: yup
-      .number()
-      .required()
-      .positive()
-      .min(11, "Enter complete phone number"),
+    studtPhoneNo: yup.number().required().min(11).positive(),
     studtEmail: yup.string().email().required(),
     studtPassword: yup.string().required().min(5),
   });
@@ -29,8 +25,11 @@ const SignUpPageOne = () => {
     resolver: yupResolver(schema),
   });
 
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     console.log(data);
+    navigate("/studentSignUpPageTwo");
   };
 
   return (

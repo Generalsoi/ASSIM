@@ -1,10 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import "./SignUpPageThree.css";
 import Logo from "../../../assets/images/Logo.png";
 import LargeLogo from "../../../assets/images/large-logo.png";
 
 const SignUpPageTwo = () => {
+  const schema = yup.object({
+    studAddress: yup.string().required(),
+    studSchoolName: yup.string().required(),
+    studGender: yup.string().required(),
+    studStateOfOrigin: yup.string().required(),
+    studLocalGovtArea: yup.string().required(),
+    studSchSubjectsOffered: yup.string().required(),
+  });
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    console.log(data);
+
+    navigate("/completeSignUp");
+  };
+
   return (
     <div className="signup-pagethree">
       <div className="header">
@@ -22,37 +48,47 @@ const SignUpPageTwo = () => {
           <h4>Basic Personal Information</h4>
 
           <div className="form-two">
-            <form action="">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div>
-                <select name="gender" id="gender">
+                <select {...register("studGender")} id="gender">
                   <option value="gender">Gender</option>
                 </select>
               </div>
               <div>
-                <input type="text" placeholder="Address" />
+                <input
+                  {...register("studAddress")}
+                  type="text"
+                  placeholder="Address"
+                />
               </div>
               <div>
-                <select name="state-of-origin" id="origin">
+                <select {...register("studStateOfOrigin")} id="origin">
                   <option value="origin">State of Origin</option>
                 </select>
               </div>
               <div>
-                <select name="lga" id="lga">
+                <select {...register("studLocalGovtArea")} id="lga">
                   <option value="lga">Local Government Area</option>
                 </select>
               </div>
               <div>
-                <input type="text" placeholder="Name of Your School" />
+                <input
+                  {...register("studSchoolName")}
+                  type="text"
+                  placeholder="Name of Your School"
+                />
               </div>
               <div>
-                <select name="subjects" id="subjects">
+                <select
+                  {...register("studSchSubjectsOffered")}
+                  name="subjects"
+                  id="subjects"
+                >
                   <option value="subject">No. of subjects offered</option>
                 </select>
               </div>
               <div>
-                <Link to="/completeSignUp">
-                  <button type="submit">Complete</button>
-                </Link>
+                <button type="submit">Complete</button>
               </div>
             </form>
           </div>
