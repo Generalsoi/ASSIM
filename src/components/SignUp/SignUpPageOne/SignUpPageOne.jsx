@@ -9,10 +9,12 @@ import Arrow from "../../../assets/images/arrowicon.png";
 import dataObject from "../data.js";
 
 const SignUpPageOne = () => {
+  const classesAvailable = ["Primary 5", "Primary 6", "JSS1", "JSS3"];
+
   const schema = yup.object({
     studtFirstName: yup.string().required(),
     studtLastName: yup.string().required(),
-    studtClass: yup.string().required(),
+    studtClass: yup.mixed().nullable().required().oneOf(classesAvailable),
     studtPhoneNo: yup.number().required().min(11).positive(),
     studtEmail: yup.string().email().required(),
     studtPassword: yup.string().required().min(6),
@@ -95,7 +97,16 @@ const SignUpPageOne = () => {
               </div>
               <div>
                 <select {...register("studtClass")} id="class">
-                  <option value="class">Class</option>
+                  {classesAvailable.map((el) => {
+                    <option value={el} index={classesAvailable.indexOf(el)}>
+                      {el}
+                    </option>;
+                  })}
+                  {/* <option value="class">Class</option>
+                  <option value="primary 5">{classesAvailable[0]}</option>
+                  <option value="primary6">{classesAvailable[1]}</option>
+                  <option value="jss1">{classesAvailable[2]}</option>
+                  <option value="jss3">{classesAvailable[3]}</option> */}
                 </select>
               </div>
               <div>
