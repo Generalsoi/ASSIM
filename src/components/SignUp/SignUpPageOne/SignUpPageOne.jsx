@@ -8,7 +8,7 @@ import Logo from "../../../assets/images/Logo.png";
 import Arrow from "../../../assets/images/arrowicon.png";
 import dataObject from "../data.js";
 
-const SignUpPageOne = () => {
+const SignUpPageOne = ({ onContinue }) => {
   const classesAvailable = ["Primary 5", "Primary 6", "JSS1", "JSS3"];
 
   const schema = yup.object({
@@ -28,11 +28,9 @@ const SignUpPageOne = () => {
     resolver: yupResolver(schema),
   });
 
-  const navigate = useNavigate();
-
   const onSubmit = (data) => {
-    console.log(data);
-    dataObject.push(data);
+    onContinue(data, 1);
+    // dataObject.push(data);
     // navigate("/studentSignUpPageTwo");
   };
 

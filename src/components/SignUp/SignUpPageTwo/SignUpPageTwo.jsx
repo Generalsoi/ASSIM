@@ -7,7 +7,7 @@ import "./SignUpPageTwo.css";
 import Logo from "../../../assets/images/Logo.png";
 import LargeLogo from "../../../assets/images/large-logo.png";
 
-const SignUpPageTwo = () => {
+const SignUpPageTwo = ({ onContinue }) => {
   const schema = yup.object({
     studSchLocation: yup.string().required(),
     studFavSubject: yup.string().required(),
@@ -20,12 +20,9 @@ const SignUpPageTwo = () => {
     handleSubmit,
   } = useForm({ resolver: yupResolver(schema) });
 
-  const navigate = useNavigate();
-
   const onSubmit = (data) => {
-    console.log(data);
-
-    navigate("/studentSignUpPageThree");
+    onContinue(data, 2);
+    // navigate("/studentSignUpPageThree");
   };
 
   return (
