@@ -1,7 +1,4 @@
 .homepage{
     display: flex;
-}
-
-.content{
-    flex: 5;
+    position: relative;
 }
