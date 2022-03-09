@@ -14,7 +14,7 @@ const SignUpPageOne = () => {
   const schema = yup.object({
     studtFirstName: yup.string().required(),
     studtLastName: yup.string().required(),
-    studtClass: yup.mixed().nullable().required().oneOf(classesAvailable),
+    studtClass: yup.string().required(),
     studtPhoneNo: yup.number().required().min(11).positive(),
     studtEmail: yup.string().email().required(),
     studtPassword: yup.string().required().min(6),
@@ -33,7 +33,7 @@ const SignUpPageOne = () => {
   const onSubmit = (data) => {
     console.log(data);
     dataObject.push(data);
-    navigate("/studentSignUpPageTwo");
+    // navigate("/studentSignUpPageTwo");
   };
 
   return (
@@ -97,16 +97,16 @@ const SignUpPageOne = () => {
               </div>
               <div>
                 <select {...register("studtClass")} id="class">
-                  {classesAvailable.map((el) => {
-                    <option value={el} index={classesAvailable.indexOf(el)}>
+                  <option value="">---Select Class---</option>
+                  {classesAvailable.map((el) => (
+                    <option
+                      key={el}
+                      value={el}
+                      index={classesAvailable.indexOf(el)}
+                    >
                       {el}
-                    </option>;
-                  })}
-                  {/* <option value="class">Class</option>
-                  <option value="primary 5">{classesAvailable[0]}</option>
-                  <option value="primary6">{classesAvailable[1]}</option>
-                  <option value="jss1">{classesAvailable[2]}</option>
-                  <option value="jss3">{classesAvailable[3]}</option> */}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div>
