@@ -30,3 +30,45 @@
     font-family: 'Lato', sans-serif;
     margin-left: 1rem;
 }
+
+.sidebar-btns{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.upgrade-plan-btn{
+    background: #6363C7;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.contact-support-btn{
+    background: #EFEFFF;
+    mix-blend-mode: normal;
+    color: #7A74FC;
+    margin-bottom: 2.5rem;
+}
+
+.contact-support-btn, .upgrade-plan-btn{
+    font-weight: 700;
+    font-size: 0.813rem;
+    height: 36px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+}
+
+.sign-out{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #E55858;
+}
+
+.sign-out p{
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}

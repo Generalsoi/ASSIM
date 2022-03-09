@@ -7,6 +7,7 @@ import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
 import SettingsIcon from "@mui/icons-material/Settings";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const Sidebar = () => {
   return (
@@ -42,6 +43,15 @@ const Sidebar = () => {
             <p>Settings</p>
           </li>
         </ul>
+      </div>
+
+      <div className="sidebar-btns">
+        <button className="upgrade-plan-btn">Upgrade Plan</button>
+        <button className="contact-support-btn">Contact Support</button>
+        <div className="sign-out">
+          <LogoutIcon />
+          <p>Sign Out</p>
+        </div>
       </div>
     </div>
   );
