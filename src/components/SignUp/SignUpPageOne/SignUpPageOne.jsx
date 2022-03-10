@@ -12,12 +12,12 @@ const SignUpPageOne = ({ onContinue }) => {
   const classesAvailable = ["Primary 5", "Primary 6", "JSS1", "JSS3"];
 
   const schema = yup.object({
-    studtFirstName: yup.string().required(),
-    studtLastName: yup.string().required(),
-    studtClass: yup.string().required(),
-    studtPhoneNo: yup.number().required().min(11).positive(),
-    studtEmail: yup.string().email().required(),
-    studtPassword: yup.string().required().min(6),
+    firstname: yup.string().required(),
+    lastname: yup.string().required(),
+    class: yup.string().required(),
+    phoneNumber: yup.number().required().min(11).positive(),
+    email: yup.string().email().required(),
+    password: yup.string().required().min(6),
   });
 
   const {
@@ -81,20 +81,20 @@ const SignUpPageOne = ({ onContinue }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <input
-                  {...register("studtFirstName")}
+                  {...register("firstname")}
                   type="text"
                   placeholder="First Name"
                   id="studFirstName"
                 />
                 <input
-                  {...register("studtLastName")}
+                  {...register("lastname")}
                   type="text"
                   placeholder="Last Name"
                   id="studLastName"
                 />
               </div>
               <div>
-                <select {...register("studtClass")} id="class">
+                <select {...register("class")} id="class">
                   <option value="">---Select Class---</option>
                   {classesAvailable.map((el) => (
                     <option
@@ -109,21 +109,21 @@ const SignUpPageOne = ({ onContinue }) => {
               </div>
               <div>
                 <input
-                  {...register("studtPhoneNo")}
+                  {...register("phoneNumber")}
                   type="tel"
                   placeholder="Phone number"
                 />
               </div>
               <div>
                 <input
-                  {...register("studtEmail")}
+                  {...register("email")}
                   type="email"
                   placeholder="Email address"
                 />
               </div>
               <div>
                 <input
-                  {...register("studtPassword")}
+                  {...register("password")}
                   type="password"
                   placeholder="Password"
                 />

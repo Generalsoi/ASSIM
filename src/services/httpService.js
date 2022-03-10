@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const http = axios.interceptors.response.use(null, (exception) => {
+axios.interceptors.response.use(null, (exception) => {
   const expected =
     exception.response &&
     exception.response.status >= 400 &&
@@ -15,7 +15,7 @@ const http = axios.interceptors.response.use(null, (exception) => {
 });
 
 export default {
-  get: http.get,
-  post: http.post,
-  put: http.put,
+  get: axios.get,
+  post: axios.post,
+  put: axios.put,
 };

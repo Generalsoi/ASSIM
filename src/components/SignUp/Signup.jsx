@@ -10,21 +10,21 @@ import { registerStudent } from "../../services/userService";
 
 const Signup = () => {
   const [data, setData] = useState({
-    studtFirstName: "",
-    studtLastName: "",
-    studtClass: "",
-    studtPhoneNo: "",
-    studtEmail: "",
-    studtPassword: "",
-    studSchLocation: "",
-    studFavSubject: "",
-    studLeastFavSubject: "",
-    studAddress: "",
-    studSchoolName: "",
-    studGender: "",
-    studStateOfOrigin: "",
-    studLocalGovtArea: "",
-    studSchSubjectsOffered: "",
+    firstname: "",
+    lastname: "",
+    class: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+    school: "",
+    favoriteSubject: "",
+    leastFavoriteSubject: "",
+    address: "",
+    school: "",
+    gender: "",
+    stateOfOrigin: "",
+    lga: "",
+    noOfSubjects: "",
   });
 
   const [step, setStep] = useState(1);
@@ -38,9 +38,11 @@ const Signup = () => {
       const response = await registerStudent(data);
       console.log(response);
 
+      if (response === "200") {
+        navigate("/completeSignUp");
+      }
       //   navigate("/completeSignUp");
     }
-
     setStep(index + 1);
   };
   console.log(data);

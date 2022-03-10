@@ -9,12 +9,12 @@ import LargeLogo from "../../../assets/images/large-logo.png";
 
 const SignUpPageThree = ({ onContinue }) => {
   const schema = yup.object({
-    studAddress: yup.string().required(),
-    studSchoolName: yup.string().required(),
-    studGender: yup.string().required(),
-    studStateOfOrigin: yup.string().required(),
-    studLocalGovtArea: yup.string().required(),
-    studSchSubjectsOffered: yup.string().required(),
+    address: yup.string().required(),
+    school: yup.string().required(),
+    gender: yup.string().required(),
+    stateOfOrigin: yup.string().required(),
+    lga: yup.string().required(),
+    noOfSubjects: yup.string(),
   });
 
   const {
@@ -47,37 +47,37 @@ const SignUpPageThree = ({ onContinue }) => {
           <div className="form-two">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
-                <select {...register("studGender")} id="gender">
+                <select {...register("gender")} id="gender">
                   <option value="gender">Gender</option>
                 </select>
               </div>
               <div>
                 <input
-                  {...register("studAddress")}
+                  {...register("address")}
                   type="text"
                   placeholder="Address"
                 />
               </div>
               <div>
-                <select {...register("studStateOfOrigin")} id="origin">
+                <select {...register("stateOfOrigin")} id="origin">
                   <option value="origin">State of Origin</option>
                 </select>
               </div>
               <div>
-                <select {...register("studLocalGovtArea")} id="lga">
+                <select {...register("lga")} id="lga">
                   <option value="lga">Local Government Area</option>
                 </select>
               </div>
               <div>
                 <input
-                  {...register("studSchoolName")}
+                  {...register("school")}
                   type="text"
                   placeholder="Name of Your School"
                 />
               </div>
               <div>
                 <select
-                  {...register("studSchSubjectsOffered")}
+                  {...register("noOfSubjects")}
                   name="subjects"
                   id="subjects"
                 >

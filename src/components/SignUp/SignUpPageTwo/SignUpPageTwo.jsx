@@ -9,9 +9,9 @@ import LargeLogo from "../../../assets/images/large-logo.png";
 
 const SignUpPageTwo = ({ onContinue }) => {
   const schema = yup.object({
-    studSchLocation: yup.string().required(),
-    studFavSubject: yup.string().required(),
-    studLeastFavSubject: yup.string().required(),
+    school: yup.string().required(),
+    favoriteSubject: yup.string().required(),
+    leastFavoriteSubject: yup.string().required(),
   });
 
   const {
@@ -45,21 +45,21 @@ const SignUpPageTwo = ({ onContinue }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <input
-                  {...register("studSchLocation")}
+                  {...register("school")}
                   type="text"
                   placeholder="Where do you school?"
                 />
               </div>
               <div>
                 <input
-                  {...register("studFavSubject")}
+                  {...register("favoriteSubject")}
                   type="text"
                   placeholder="What is your favorite subject?"
                 />
               </div>
               <div>
                 <input
-                  {...register("studLeastFavSubject")}
+                  {...register("leastFavoriteSubject")}
                   type="text"
                   placeholder="What is your least favorite subject?"
                 />
