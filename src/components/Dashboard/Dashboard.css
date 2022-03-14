@@ -1,6 +1,7 @@
 .dashboard{
     display: flex;
     position: relative;
+    background: #E5E5E5;
 }
 
 .sidebar{
