@@ -1,11 +1,11 @@
 import React from "react";
 import "./Dashboard.css";
-import Sidebar from "../Sidebar/Sidebar";
-import Content from "../Content/Content";
+import Sidebar from "./Sidebar/Sidebar";
+import Content from "./Content/Content";
 
-const Homepage = () => {
+const Dashboard = () => {
   return (
-    <div className="homepage">
+    <div className="dashboard">
       <div className="sidebar">
         <Sidebar />
       </div>
@@ -16,4 +16,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Dashboard;

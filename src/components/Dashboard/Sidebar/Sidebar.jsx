@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import Logo from "../../assets/images/Logo.png";
+import Logo from "../../../assets/images/Logo.png";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import GroupsIcon from "@mui/icons-material/Groups";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
@@ -8,24 +8,31 @@ import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="main-sidebar">
       <div className="assim-logo">
         <img src={Logo} alt="assim-logo" />
       </div>
 
       <div className="sidebar-links">
         <ul>
-          <li className="sidebar-link">
-            <GridViewRoundedIcon />
-            <p>Dashboard</p>
-          </li>
-          <li className="sidebar-link">
-            <GroupsIcon />
-            <p>Classes</p>
-          </li>
+          <Link to="/studDashboard">
+            <li className="sidebar-link">
+              <GridViewRoundedIcon />
+              <p>Dashboard</p>
+            </li>
+          </Link>
+
+          <Link to="/classes">
+            <li className="sidebar-link">
+              <GroupsIcon />
+              <p>Classes</p>
+            </li>
+          </Link>
+
           <li className="sidebar-link">
             <ArticleRoundedIcon />
             <p>Documents</p>

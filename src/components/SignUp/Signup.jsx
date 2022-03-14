@@ -35,12 +35,15 @@ const Signup = () => {
 
     if (step === 3) {
       // submit to server
-      const response = await registerStudent(data);
-      console.log(response);
-
-      if (response === "200") {
-        navigate("/completeSignUp");
+      try {
+        const response = await registerStudent(data);
+      } catch (error) {
+        if (error.response && error.response.status === 409) {
+          alert("User email already registered");
+        }
       }
+
+      navigate("/completeSignUp");
       //   navigate("/completeSignUp");
     }
     setStep(index + 1);

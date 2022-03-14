@@ -11,7 +11,7 @@ axios.interceptors.response.use(null, (exception) => {
     console.log(exception.response);
   }
 
-  return Promise.reject();
+  return Promise.reject(exception);
 });
 
 export default {

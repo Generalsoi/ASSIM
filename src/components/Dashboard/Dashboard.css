@@ -1,4 +1,17 @@
-.homepage{
+.dashboard{
     display: flex;
     position: relative;
+}
+
+.sidebar{
+    flex: 1;
+    height: 100%;
+    background: #FFFFFF;
+    padding: 2% 4%;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.content{
+    flex: 9;
+    top: 0;
 }
