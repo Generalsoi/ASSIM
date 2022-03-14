@@ -19,24 +19,27 @@ const Sidebar = () => {
 
       <div className="sidebar-links">
         <ul>
-          <Link to="/studDashboard">
+          <Link to="/studDashboard" className="sidebarLink">
             <li className="sidebar-link">
               <GridViewRoundedIcon />
               <p>Dashboard</p>
             </li>
           </Link>
 
-          <Link to="/classes">
+          <Link to="/classes" className="sidebarLink">
             <li className="sidebar-link">
               <GroupsIcon />
               <p>Classes</p>
             </li>
           </Link>
 
-          <li className="sidebar-link">
-            <ArticleRoundedIcon />
-            <p>Documents</p>
-          </li>
+          <Link to="" className="sidebarLink">
+            <li className="sidebar-link">
+              <ArticleRoundedIcon />
+              <p>Documents</p>
+            </li>
+          </Link>
+
           <li className="sidebar-link">
             <CalendarMonthRoundedIcon />
             <p>Schedule</p>

@@ -17,6 +17,11 @@
     line-height: 24px;
     color: #8A8A8A;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.sidebarLink{
+    text-decoration: none;
 }
 
 .sidebar-link p{
