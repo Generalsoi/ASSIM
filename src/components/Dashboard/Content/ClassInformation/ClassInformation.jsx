@@ -30,7 +30,7 @@ const ClassInformation = () => {
         </li>
       </ul>
 
-      <div>
+      <div className="class-info-contents">
         {activeTab === "tab1" && <RecentClass />}
         {activeTab === "tab2" && <InProgress />}
         {activeTab === "tab3" && <Assignments />}

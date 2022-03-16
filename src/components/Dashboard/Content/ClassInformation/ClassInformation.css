@@ -19,3 +19,16 @@
     font-weight: 700;
     color: black;
 }
+
+.active::after{
+    content: '';
+    display: block;
+    border: 3px solid #7777F9;
+    border-radius: 10px;
+    width: 48px;
+    margin-left: 4rem;
+}
+
+.class-info-contents{
+    margin-top: 2rem;
+}
