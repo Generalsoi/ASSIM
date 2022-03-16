@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CompleteSignUp from "./components/SignUp/CompleteSignUp/CompleteSignUp";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Signup from "./components/SignUp/Signup";
 import Classes from "./components/Dashboard/Content/Classes/Classes";
 

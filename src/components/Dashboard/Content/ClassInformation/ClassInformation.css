@@ -1,0 +1,21 @@
+.class-info{
+    margin-top: 2rem;
+}
+
+.class-info-headings{
+    display: flex;
+    list-style-type: none;
+}
+
+.class-info-heading{
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 4rem;
+    cursor: pointer;
+    color: #8A8A8A;
+    font-size: 1.125rem;
+}
+
+.active{
+    font-weight: 700;
+    color: black;
+}

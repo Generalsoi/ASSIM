@@ -1,6 +1,6 @@
 import React from "react";
 import "./Content.css";
-import StudDashboard from "./StudDashboard/StudDashboard";
+import StudDashboard from "../StudDashboard/StudDashboard";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Classes from "./Classes/Classes";
 

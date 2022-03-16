@@ -1,6 +1,7 @@
 import React from "react";
 import StudentDashboardHeader from "../../../../common/StudentDashboardHeader/StudentDashboardHeader";
 import "./StudDashboard.css";
+import ClassInformation from "./../ClassInformation/ClassInformation";
 
 const StudDashboard = () => {
   return (
@@ -16,6 +17,8 @@ const StudDashboard = () => {
           improve your progress
         </p>
       </div>
+
+      <ClassInformation />
     </div>
   );
 };
