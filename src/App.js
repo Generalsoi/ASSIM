@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Redirect } from "react-router";
 import "./App.css";
 import CompleteSignUp from "./components/SignUp/CompleteSignUp/CompleteSignUp";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Signup from "./components/SignUp/Signup";
 import Classes from "./components/Dashboard/Content/Classes/Classes";
+import StudDashboard from "./components/Dashboard/Content/StudDashboard/StudDashboard";
 
 function App() {
   return (

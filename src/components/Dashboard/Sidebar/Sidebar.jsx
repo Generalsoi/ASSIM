@@ -10,7 +10,14 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  const { activeMenu, setActiveMenu } = props;
+
+  const handleMenu1 =
+    (activeMenu === "menu1" && "activeMenu") + " sidebar-link";
+  const handleMenu2 =
+    (activeMenu === "menu2" && "activeMenu") + " sidebar-link";
+
   return (
     <div className="main-sidebar">
       <div className="assim-logo">
@@ -19,19 +26,15 @@ const Sidebar = () => {
 
       <div className="sidebar-links">
         <ul>
-          <Link to="/studDashboard" className="sidebarLink">
-            <li className="sidebar-link">
-              <GridViewRoundedIcon />
-              <p>Dashboard</p>
-            </li>
-          </Link>
+          <li className={handleMenu1} onClick={() => setActiveMenu("menu1")}>
+            <GridViewRoundedIcon />
+            <p>Dashboard</p>
+          </li>
 
-          <Link to="/classes" className="sidebarLink">
-            <li className="sidebar-link">
-              <GroupsIcon />
-              <p>Classes</p>
-            </li>
-          </Link>
+          <li className={handleMenu2} onClick={() => setActiveMenu("menu2")}>
+            <GroupsIcon />
+            <p>Classes</p>
+          </li>
 
           <Link to="" className="sidebarLink">
             <li className="sidebar-link">

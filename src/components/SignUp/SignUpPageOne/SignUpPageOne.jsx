@@ -37,9 +37,9 @@ const SignUpPageOne = ({ onContinue }) => {
   return (
     <div className="signup-pageone">
       <div className="header">
-        <a href="/">
+        <Link to="/">
           <img src={Logo} alt="assim-logo" />
-        </a>
+        </Link>
 
         <p>
           Already have an account?{" "}

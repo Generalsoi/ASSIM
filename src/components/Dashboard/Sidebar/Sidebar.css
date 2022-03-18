@@ -70,3 +70,8 @@
     font-size: 1rem;
     margin-left: 0.5rem;
 }
+
+.activeMenu{
+    color: #7777F9;
+    background: #EFEFFF;
+}

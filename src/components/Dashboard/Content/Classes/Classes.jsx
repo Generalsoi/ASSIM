@@ -1,7 +1,8 @@
 import React from "react";
+import "./Classes.css";
 
 const Classes = () => {
-  return <div>Classes</div>;
+  return <div className="classes">Classes</div>;
 };
 
 export default Classes;
