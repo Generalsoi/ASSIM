@@ -17,6 +17,14 @@ const Sidebar = (props) => {
     (activeMenu === "menu1" && "activeMenu") + " sidebar-link";
   const handleMenu2 =
     (activeMenu === "menu2" && "activeMenu") + " sidebar-link";
+  const handleMenu3 =
+    (activeMenu === "menu3" && "activeMenu") + " sidebar-link";
+  const handleMenu4 =
+    (activeMenu === "menu4" && "activeMenu") + " sidebar-link";
+  const handleMenu5 =
+    (activeMenu === "menu5" && "activeMenu") + " sidebar-link";
+  const handleMenu6 =
+    (activeMenu === "menu6" && "activeMenu") + " sidebar-link";
 
   return (
     <div className="main-sidebar">
@@ -36,22 +44,20 @@ const Sidebar = (props) => {
             <p>Classes</p>
           </li>
 
-          <Link to="" className="sidebarLink">
-            <li className="sidebar-link">
-              <ArticleRoundedIcon />
-              <p>Documents</p>
-            </li>
-          </Link>
+          <li className={handleMenu3} onClick={() => setActiveMenu("menu3")}>
+            <ArticleRoundedIcon />
+            <p>Documents</p>
+          </li>
 
-          <li className="sidebar-link">
+          <li className={handleMenu4} onClick={() => setActiveMenu("menu4")}>
             <CalendarMonthRoundedIcon />
             <p>Schedule</p>
           </li>
-          <li className="sidebar-link">
+          <li className={handleMenu5} onClick={() => setActiveMenu("menu5")}>
             <InsertChartRoundedIcon />
             <p>Achievements</p>
           </li>
-          <li className="sidebar-link">
+          <li className={handleMenu6} onClick={() => setActiveMenu("menu6")}>
             <SettingsIcon />
             <p>Settings</p>
           </li>
