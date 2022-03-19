@@ -1,5 +1,5 @@
-.main-sidebar{
-    
+.main-sidebar .assim-logo{
+    margin: 0 3rem;
 }
 
 .sidebar-links{
@@ -19,6 +19,7 @@
     cursor: pointer;
     text-decoration: none;
     width: 100%;
+    padding: 0 3rem;
 }
 
 .sidebarLink{
@@ -35,6 +36,7 @@
     flex-direction: column;
     margin-top: 7rem;
     text-align: center;
+    padding: 0 2rem;
 }
 
 .upgrade-plan-btn{
@@ -75,5 +77,7 @@
 .activeMenu{
     color: #7777F9;
     background: #EFEFFF;
+    font-weight: 700;
     height: 40px;
+    border-left: 4px solid #7777F9;
 }
