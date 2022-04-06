@@ -1,3 +1,64 @@
 .topClassesAndPerformers{
     margin-top: 4rem;
+    display: flex;
+}
+
+.top-classes{
+    flex: 3;
+}
+
+.top-performers{
+    flex: 1;
+}
+
+.top-classes-div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.top-classes-content{
+    width: 29%;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.top-classes-content-img{
+    width: 13rem;
+    height: 8rem;
+    border-radius: 8px;
+}
+
+.top-classes-content-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.top-classes-content-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.top-classes-content-details div{
+    display: flex;
+    align-items: center;
+}
+
+.top-classes-content-details div p{
+    color: #555555;
+    font-size: 0.65rem;
+}
+
+.top-classes-content-details>div .personIcon{
+    color: #B8B8D2;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+.top-classes-content-details .no-of-chapters{
+    font-size: 0.75rem;
+    color: #555555;
 }

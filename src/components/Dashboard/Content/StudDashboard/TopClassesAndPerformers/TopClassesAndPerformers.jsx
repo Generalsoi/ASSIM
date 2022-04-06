@@ -1,5 +1,6 @@
 import React from "react";
 import "./TopClassesAndPerformers.css";
+import PersonIcon from "@mui/icons-material/Person";
 import TopClassOne from "../../../../../assets/images/topclassone.png";
 import TopClassTwo from "../../../../../assets/images/topclasstwo.png";
 import TopClassThree from "../../../../../assets/images/topclassthree.png";
@@ -52,16 +53,26 @@ const TopClassesAndPerformers = () => {
       <div className="top-classes">
         <h4>Top Classes</h4>
 
-        {topClassesContent.map((content) => (
-          <div className="top-classes-content" key={content.id}>
-            <div className="top-classes-content-img"></div>
-            <div className="top-classes-content-details"></div>
-          </div>
-        ))}
+        <div className="top-classes-div">
+          {topClassesContent.map((content) => (
+            <div className="top-classes-content" key={content.id}>
+              <div className="top-classes-content-img">{content.image}</div>
+              <div className="top-classes-content-details">
+                <div>
+                  <PersonIcon className="personIcon" />
+                  <p>{content.title}</p>
+                </div>
+                <p className="no-of-chapters">
+                  {content.noOfChapters} Chapters
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="top-performers">
-        <h4>Top Performers</h4>
+        <h4>Top Performing Students</h4>
       </div>
     </div>
   );

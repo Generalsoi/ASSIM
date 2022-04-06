@@ -1,0 +1,72 @@
+.class-section-heading{
+    margin: 2rem 0 1rem;
+    font-weight: 400;
+}
+
+.featured-classes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-class{
+    cursor: pointer;
+}
+
+.featured-class .class-image{
+    width: 14rem;
+    height: 9rem;
+}
+
+.featured-class .class-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.featured-class .class-title{
+    color: #121212;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.featured-class .class-tutor{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-class .class-tutor>div:first-child{
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.featured-class .class-tutor .class-tutor-name{
+    color: #555555;
+    font-weight: 400;
+    margin-left: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+.featured-class .class-tutor .person-icon{
+    color: #B8B8D2;
+}
+
+.featured-class .class-tutor .class-length{
+    width: 3rem;
+    height: 1rem;
+    background: rgba(147, 167, 246, 0.2);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-class .class-tutor .class-length p{
+    font-size: 0.573rem;
+    color: #274FED;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
