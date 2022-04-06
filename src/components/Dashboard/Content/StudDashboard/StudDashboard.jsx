@@ -1,7 +1,8 @@
 import React from "react";
 import StudentDashboardHeader from "../../../../common/StudentDashboardHeader/StudentDashboardHeader";
 import "./StudDashboard.css";
-import ClassInformation from "./../ClassInformation/ClassInformation";
+import ClassInformation from "./ClassInformation/ClassInformation";
+import TopClassesAndPerformers from "./TopClassesAndPerformers/TopClassesAndPerformers";
 
 const StudDashboard = () => {
   return (
@@ -19,6 +20,7 @@ const StudDashboard = () => {
       </div>
 
       <ClassInformation />
+      <TopClassesAndPerformers />
     </div>
   );
 };

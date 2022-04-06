@@ -1,11 +1,11 @@
 import React from "react";
 import "./InProgress.css";
 import PersonIcon from "@mui/icons-material/Person";
-import ProgressOneImg from "../../../../assets/images/progressone.png";
-import ProgressTwoImg from "../../../../assets/images/progresstwo.png";
-import ProgressThreeImg from "../../../../assets/images/progressthree.png";
-import ProgressFourImg from "../../../../assets/images/progressfour.png";
-import ProgressFiveImg from "../../../../assets/images/progressfive.png";
+import ProgressOneImg from "../../../../../assets/images/progressone.png";
+import ProgressTwoImg from "../../../../../assets/images/progresstwo.png";
+import ProgressThreeImg from "../../../../../assets/images/progressthree.png";
+import ProgressFourImg from "../../../../../assets/images/progressfour.png";
+import ProgressFiveImg from "../../../../../assets/images/progressfive.png";
 
 const InProgress = () => {
   const inProgressContents = [
