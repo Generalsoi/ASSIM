@@ -54,7 +54,7 @@ const NewDocuments = () => {
               </div>
               <div>
                 <p>{content.timeUploaded}</p>
-                <CloudDownloadOutlinedIcon />
+                <CloudDownloadOutlinedIcon className="document-download-icon" />
               </div>
             </div>
           </div>

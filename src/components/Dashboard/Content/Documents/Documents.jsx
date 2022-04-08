@@ -1,7 +1,9 @@
 import React from "react";
 import StudentDashboardHeader from "../../../../common/StudentDashboardHeader/StudentDashboardHeader";
+import AssimDocuments from "./AssimDocuments/AssimDocuments";
 import "./Documents.css";
 import NewDocuments from "./NewDocuments/NewDocuments";
+import PopularDocuments from "./PopularDocuments/PopularDocuments";
 
 const Documents = () => {
   return (
@@ -13,6 +15,8 @@ const Documents = () => {
       </div>
 
       <NewDocuments />
+      <AssimDocuments />
+      <PopularDocuments />
     </div>
   );
 };
