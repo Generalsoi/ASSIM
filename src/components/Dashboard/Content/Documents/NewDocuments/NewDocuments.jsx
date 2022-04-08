@@ -40,14 +40,14 @@ const NewDocuments = () => {
 
   return (
     <React.Fragment>
-      <h5>New Documents</h5>
+      <h5 className="new-documents-section-heading">New Documents</h5>
       <div className="new-documents">
         {newDocumentContents.map((content) => (
           <div className="new-document" key={content.id}>
-            <div>
+            <div className="new-document-img">
               <img src={content.image} alt="" />
             </div>
-            <div>
+            <div className="new-document-details">
               <div>
                 <p>{content.docName}</p>
                 <p>{content.docSize}</p>
