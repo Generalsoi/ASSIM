@@ -5,6 +5,7 @@ import Classes from "../Classes/Classes";
 import StudentDashboardHeader from "./../../../../common/StudentDashboardHeader/StudentDashboardHeader";
 import Documents from "../Documents/Documents";
 import Achievements from "../Achievements/Achievements";
+import Settings from "../Settings/Settings/Settings";
 
 const Content = (props) => {
   const { activeMenu } = props;
@@ -14,6 +15,7 @@ const Content = (props) => {
       {activeMenu === "menu2" && <Classes />}
       {activeMenu === "menu3" && <Documents />}
       {activeMenu === "menu5" && <Achievements />}
+      {activeMenu === "menu6" && <Settings />}
       {/* <Routes>
         <Route path="/studDashboard" element={<StudDashboard />} />
         <Route path="/classes" element={<Classes />} />
