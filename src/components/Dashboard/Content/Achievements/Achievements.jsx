@@ -9,6 +9,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TablePagination from "@mui/material/TablePagination";
 import Paper from "@mui/material/Paper";
+import Progressbar from "./Progressbar";
+
+//imported images
+import EmmanuelAvatar from "../../../../assets/images/emmanuelavatar.png";
 
 function createData(Students, Ratings, Lastassessed) {
   return { Students, Ratings, Lastassessed };
@@ -16,16 +20,82 @@ function createData(Students, Ratings, Lastassessed) {
 
 const rows = [
   createData(
-    <div>
-      <p>Emmanuel</p> <p>SS1</p>
+    <div className="created-data">
+      <img src={EmmanuelAvatar} alt="emmanuel avatar" />
+      <div>
+        <h5>Emmanuel</h5>
+        <p>SS1</p>
+      </div>
     </div>,
-    159,
-    6.0
+    <Progressbar completed={60} />,
+    "22 Jan 2022"
   ),
-  createData("Ice cream sandwich", 237),
-  createData("Eclair", 262, 16.0),
-  createData("Cupcake", 305, 3.7),
-  createData("Gingerbread", 356, 16.0),
+  createData(
+    <div className="created-data">
+      <img src={EmmanuelAvatar} alt="emmanuel avatar" />
+      <div>
+        <h5>Emmanuel</h5>
+        <p>SS1</p>
+      </div>
+    </div>,
+    <Progressbar completed={60} />,
+    "22 Jan 2022"
+  ),
+  createData(
+    <div className="created-data">
+      <img src={EmmanuelAvatar} alt="emmanuel avatar" />
+      <div>
+        <h5>Emmanuel</h5>
+        <p>SS1</p>
+      </div>
+    </div>,
+    <Progressbar completed={60} />,
+    "22 Jan 2022"
+  ),
+  createData(
+    <div className="created-data">
+      <img src={EmmanuelAvatar} alt="emmanuel avatar" />
+      <div>
+        <h5>Emmanuel</h5>
+        <p>SS1</p>
+      </div>
+    </div>,
+    <Progressbar completed={60} />,
+    "22 Jan 2022"
+  ),
+  createData(
+    <div className="created-data">
+      <img src={EmmanuelAvatar} alt="emmanuel avatar" />
+      <div>
+        <h5>Emmanuel</h5>
+        <p>SS1</p>
+      </div>
+    </div>,
+    <Progressbar completed={60} />,
+    "22 Jan 2022"
+  ),
+  createData(
+    <div className="created-data">
+      <img src={EmmanuelAvatar} alt="emmanuel avatar" />
+      <div>
+        <h5>Emmanuel</h5>
+        <p>SS1</p>
+      </div>
+    </div>,
+    <Progressbar completed={60} />,
+    "22 Jan 2022"
+  ),
+  createData(
+    <div className="created-data">
+      <img src={EmmanuelAvatar} alt="emmanuel avatar" />
+      <div>
+        <h5>Emmanuel</h5>
+        <p>SS1</p>
+      </div>
+    </div>,
+    <Progressbar completed={60} />,
+    "22 Jan 2022"
+  ),
 ];
 
 const Achievements = () => {
@@ -43,15 +113,21 @@ const Achievements = () => {
           <TableHead>
             <TableRow>
               <TableCell align="center" colSpan={3}>
-                <div>
-                  <p>Major Row Innit</p>
-                  <h5>Check out</h5>
+                <div className="main-table-header">
+                  <div>
+                    <button>View All</button>
+                    <button>Ascending</button>
+                    <button>Descending</button>
+                  </div>
+                  <div>
+                    <input type="search" placeholder="Search" />
+                  </div>
                 </div>
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Students</TableCell>
-              <TableCell align="right">Ratings</TableCell>
+              <TableCell align="left">Ratings</TableCell>
               <TableCell align="right">Last assessed</TableCell>
             </TableRow>
           </TableHead>
@@ -64,7 +140,7 @@ const Achievements = () => {
                 <TableCell component="th" scope="row">
                   {row.Students}
                 </TableCell>
-                <TableCell align="right">{row.Ratings}</TableCell>
+                <TableCell align="center">{row.Ratings}</TableCell>
                 <TableCell align="right">{row.Lastassessed}</TableCell>
               </TableRow>
             ))}

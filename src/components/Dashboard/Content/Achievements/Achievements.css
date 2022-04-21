@@ -9,3 +9,11 @@
 .achievements .welcome-message p{
     color: #555555;
 }
+
+.created-data{
+    display: flex;
+}
+
+.created-data img{
+    margin-right: 0.5rem;
+}
