@@ -1,0 +1,11 @@
+.achievements{
+    padding: 2% 4%;
+}
+
+.achievements .welcome-message{
+    margin-bottom: 2rem;
+}
+
+.achievements .welcome-message p{
+    color: #555555;
+}
