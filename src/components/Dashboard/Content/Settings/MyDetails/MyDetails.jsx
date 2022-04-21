@@ -9,73 +9,65 @@ import TableRow from "@mui/material/TableRow";
 import TablePagination from "@mui/material/TablePagination";
 import Paper from "@mui/material/Paper";
 
+import Avatar from "../../../../../assets/images/Avatar.png";
+
 function createData(personalInfo) {
   return { personalInfo };
 }
 
 const rows = [
   createData(
-    <div className="created-data">
-      <div>
-        <h5>Emmanuel</h5>
-        <p>SS1</p>
+    <div className="created-personal-data">
+      <div className="name">
+        <p>Name</p>
       </div>
-    </div>,
-    "22 Jan 2022"
+      <div className="name-inputs">
+        <input type="text" placeholder="Olivia" />
+        <input type="text" placeholder="Rhye" />
+      </div>
+    </div>
   ),
   createData(
-    <div className="created-data">
-      <div>
-        <h5>Emmanuel</h5>
-        <p>SS1</p>
+    <div className="created-personal-data">
+      <div className="email">
+        <p>Email Address</p>
       </div>
-    </div>,
-    "22 Jan 2022"
+      <div className="email-inputs">
+        <input type="text" placeholder="olivia@untitledui.com" />
+      </div>
+    </div>
   ),
   createData(
-    <div className="created-data">
-      <div>
-        <h5>Emmanuel</h5>
-        <p>SS1</p>
+    <div className="created-personal-data">
+      <div className="your-photo">
+        <h5>Your photo</h5>
+        <p>This will be displayed on your profile.</p>
       </div>
-    </div>,
-    "22 Jan 2022"
+      <div className="your-photo-inputs">
+        <img src={Avatar} alt="Avatar" />
+        <input type="text" placeholder="Click to upload or drag and drop" />
+      </div>
+    </div>
   ),
   createData(
-    <div className="created-data">
-      <div>
-        <h5>Emmanuel</h5>
-        <p>SS1</p>
+    <div className="created-personal-data">
+      <div className="school">
+        <p>School</p>
       </div>
-    </div>,
-    "22 Jan 2022"
+      <div className="school-inputs">
+        <input type="text" placeholder="Solid Steps International School" />
+      </div>
+    </div>
   ),
   createData(
-    <div className="created-data">
-      <div>
-        <h5>Emmanuel</h5>
-        <p>SS1</p>
+    <div className="created-personal-data">
+      <div className="class">
+        <p>Class</p>
       </div>
-    </div>,
-    "22 Jan 2022"
-  ),
-  createData(
-    <div className="created-data">
-      <div>
-        <h5>Emmanuel</h5>
-        <p>SS1</p>
+      <div className="class-inputs">
+        <input type="text" placeholder="Junior Secondary School 1" />
       </div>
-    </div>,
-    "22 Jan 2022"
-  ),
-  createData(
-    <div className="created-data">
-      <div>
-        <h5>Emmanuel</h5>
-        <p>SS1</p>
-      </div>
-    </div>,
-    "22 Jan 2022"
+    </div>
   ),
 ];
 
