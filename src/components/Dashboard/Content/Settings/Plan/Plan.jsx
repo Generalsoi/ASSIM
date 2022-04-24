@@ -8,6 +8,8 @@ const Plan = () => {
         <h5>Plan</h5>
         <p>Manage your plans</p>
       </div>
+
+      <div className="free-plan"></div>
     </div>
   );
 };

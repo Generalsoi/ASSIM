@@ -48,7 +48,9 @@ const SignUpPageThree = ({ onContinue }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <select {...register("gender")} id="gender">
-                  <option value="gender">Gender</option>
+                  <option value="">---Select Gender---</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
                 </select>
               </div>
               <div>

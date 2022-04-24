@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 import Logo from "../../../assets/images/Logo.png";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
@@ -8,7 +9,6 @@ import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { Link } from "react-router-dom";
 
 const Sidebar = (props) => {
   const { activeMenu, setActiveMenu } = props;
