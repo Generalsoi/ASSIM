@@ -1,6 +1,3 @@
-:root{
-    --completed: {completed}%;
-}
 
 .progressbar{
     display: flex;
@@ -18,7 +15,6 @@
   .fillerStyles{
     height: 100%;
     background-color: #7777F9;
-    width: var(--completed);
     border-radius: inherit;
     text-align: right;
   }
