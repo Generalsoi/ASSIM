@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Plan.css";
 import FreePlanIcon from "../../../../../assets/images/freeplanicon.png";
 import StandardPlanIcon from "../../../../../assets/images/standardplanicon.png";
 import PremiumPlanIcon from "../../../../../assets/images/premiumplanicon.png";
 
 const Plan = () => {
+  const { active, setActive } = useState("plan1");
+
   return (
     <div className="plan">
       <div className="plan-heading">
@@ -12,8 +14,8 @@ const Plan = () => {
         <p>Manage your plans</p>
       </div>
 
-      <div className="plan-content">
-        <div>
+      <div className="plan-content" onClick={() => setActive("plan1")}>
+        <div className={active === "plan1" && "active"}>
           <div>
             <img src={FreePlanIcon} alt="" />
           </div>
@@ -30,8 +32,8 @@ const Plan = () => {
         </div>
       </div>
 
-      <div className="plan-content">
-        <div>
+      <div className="plan-content" onClick={() => setActive("plan2")}>
+        <div className={active === "plan2" && "active"}>
           <div>
             <img src={StandardPlanIcon} alt="" />
           </div>
@@ -48,8 +50,8 @@ const Plan = () => {
         </div>
       </div>
 
-      <div className="plan-content">
-        <div>
+      <div className="plan-content" onClick={() => setActive("plan3")}>
+        <div className={active === "plan3" && "active"}>
           <div>
             <img src={PremiumPlanIcon} alt="" />
           </div>
