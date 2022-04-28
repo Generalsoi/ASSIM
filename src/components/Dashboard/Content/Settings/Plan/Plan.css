@@ -1,0 +1,32 @@
+.plan-heading h5{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.plan-heading p{
+    font-size: 0.8rem;
+    color: #667085;
+    margin-top: 0.5rem;
+}
+
+.plan-content{
+    margin-top: 2rem;
+    width: 90%;
+    height: 8rem;
+    background: #FFFFFF;
+    border: 1px solid #E4E7EC;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+.plan-content>div:first-child{
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.plan-content>div:first-child div{
+    margin-right: 1rem;
+}
