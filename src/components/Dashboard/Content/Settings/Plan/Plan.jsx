@@ -7,6 +7,10 @@ import PremiumPlanIcon from "../../../../../assets/images/premiumplanicon.png";
 const Plan = () => {
   const { active, setActive } = useState("plan1");
 
+  const activeClassOne = active === "plan1" && "active";
+  const activeClassTwo = active === "plan2" && "active";
+  const activeClassThree = active === "plan3" && "active";
+
   return (
     <div className="plan">
       <div className="plan-heading">
@@ -15,7 +19,7 @@ const Plan = () => {
       </div>
 
       <div className="plan-content" onClick={() => setActive("plan1")}>
-        <div className={active === "plan1" && "active"}>
+        <div className={activeClassOne}>
           <div>
             <img src={FreePlanIcon} alt="" />
           </div>
