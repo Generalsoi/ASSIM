@@ -63,3 +63,7 @@
     color: #667085;
     font-size: 0.9rem;
 }
+
+.active{
+    background: #F9F5FF;
+}

@@ -1,0 +1,11 @@
+.billing-heading h5{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.billing-heading p{
+    font-size: 0.8rem;
+    color: #667085;
+    margin-top: 0.5rem;
+}
