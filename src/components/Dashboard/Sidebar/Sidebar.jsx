@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 import Logo from "../../../assets/images/Logo.png";
@@ -9,8 +9,10 @@ import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
+import UpgradeModal from "../UpgradeModal/UpgradeModal";
 
 const Sidebar = (props) => {
+  const [upgrade, setUpgradeModal] = useState(false);
   const { activeMenu, setActiveMenu } = props;
 
   const handleMenu1 =
@@ -65,13 +67,20 @@ const Sidebar = (props) => {
       </div>
 
       <div className="sidebar-btns">
-        <button className="upgrade-plan-btn">Upgrade Plan</button>
+        <button
+          className="upgrade-plan-btn"
+          onClick={() => setUpgradeModal(true)}
+        >
+          Upgrade Plan
+        </button>
         <button className="contact-support-btn">Contact Support</button>
         <div className="sign-out">
           <LogoutIcon />
           <p>Sign Out</p>
         </div>
       </div>
+
+      {upgrade && <UpgradeModal setUpgradeModal={setUpgradeModal} />}
     </div>
   );
 };
