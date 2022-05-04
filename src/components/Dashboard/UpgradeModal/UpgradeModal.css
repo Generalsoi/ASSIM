@@ -14,8 +14,29 @@
 }
 
 .modal-container{
-    width: 18rem;
-    height: 8rem;
+    width: 25rem;
+    height: 25rem;
     background: #F9FBFF;
     border-radius: 12px;
+    padding: 1rem;
+}
+
+.modal-content .close-modal{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modal-content .modal-content-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content .modal-content-heading h4{
+    font-weight: 500;
+    color: #374151;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
