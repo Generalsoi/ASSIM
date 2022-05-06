@@ -17,6 +17,8 @@ const UpgradeModal = (props) => {
             <img src={Computer} alt="" />
             <h4>Upgrade Your membership</h4>
           </div>
+
+          <div className="modal-content-details"></div>
         </div>
       </div>
     </div>
