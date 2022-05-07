@@ -77,6 +77,11 @@
     cursor: pointer;
 }
 
+.modal-content-details>div:nth-child(2)>p span{
+    color: #374151;
+    font-weight: 600;
+}
+
 .modal-content-details>div:nth-child(3)>p span{
     color: #7777F9;
 }
