@@ -18,7 +18,60 @@ const UpgradeModal = (props) => {
             <h4>Upgrade Your membership</h4>
           </div>
 
-          <div className="modal-content-details"></div>
+          <div className="modal-content-details">
+            <div>
+              <p>Free</p>
+            </div>
+            <div>
+              <p>
+                <span>10</span> courses
+              </p>
+            </div>
+            <div>
+              <p>
+                <span>$0</span> forever
+              </p>
+            </div>
+            <div>
+              <p>Choose Plan</p>
+            </div>
+          </div>
+
+          <div className="modal-content-details">
+            <div>
+              <p>Standard</p>
+            </div>
+            <div>
+              <p>
+                <span>20</span> courses
+              </p>
+            </div>
+            <div>
+              <p>
+                <span>$10</span> forever
+              </p>
+            </div>
+            <div>
+              <p>Choose Plan</p>
+            </div>
+          </div>
+
+          <div className="modal-content-details">
+            <div>
+              <p>Premium</p>
+            </div>
+            <div>
+              <p>Unlimited</p>
+            </div>
+            <div>
+              <p>
+                <span>$40</span> forever
+              </p>
+            </div>
+            <div>
+              <p>Choose Plan</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
