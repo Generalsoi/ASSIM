@@ -15,7 +15,7 @@
 
 .modal-container{
     width: 27rem;
-    height: 26rem;
+    height: 28rem;
     background: #F9FBFF;
     border-radius: 12px;
     padding: 1rem;
@@ -84,4 +84,16 @@
 
 .modal-content-details>div:nth-child(3)>p span{
     color: #7777F9;
+}
+
+.modal-content .more-information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.8rem;
+}
+
+.modal-content .more-information p{
+    font-size: 0.8rem;
+    color: #9CA3AF;
 }
