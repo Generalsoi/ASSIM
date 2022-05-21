@@ -58,7 +58,12 @@ const SignUpPageThree = ({ onContinue }) => {
                 {errors.gender && (
                   <p
                     className="error"
-                    style={{ color: "red", fontSize: "12px", marginTop: "0" }}
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      marginTop: "0",
+                      marginBottom: "0",
+                    }}
                   >
                     {errors.gender.message}
                   </p>

@@ -96,7 +96,12 @@ const SignUpPageOne = ({ onContinue }) => {
                   {errors.firstname && (
                     <p
                       className="error"
-                      style={{ color: "red", fontSize: "12px", marginTop: "0" }}
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        marginTop: "0",
+                        marginBottom: "0",
+                      }}
                     >
                       {errors.firstname.message}
                     </p>
@@ -118,7 +123,12 @@ const SignUpPageOne = ({ onContinue }) => {
                   {errors.lastname && (
                     <p
                       className="error"
-                      style={{ color: "red", fontSize: "12px", marginTop: "0" }}
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        marginTop: "0",
+                        marginBottom: "0",
+                      }}
                     >
                       {errors.lastname.message}
                     </p>
@@ -151,6 +161,7 @@ const SignUpPageOne = ({ onContinue }) => {
                       color: "red",
                       fontSize: "12px",
                       marginTop: "0.5px",
+                      marginBottom: "0",
                     }}
                   >
                     {errors.currentClass.message}
@@ -173,6 +184,7 @@ const SignUpPageOne = ({ onContinue }) => {
                       color: "red",
                       fontSize: "12px",
                       marginTop: "0.5px",
+                      marginBottom: "0",
                     }}
                   >
                     {errors.phone.message}
@@ -199,6 +211,7 @@ const SignUpPageOne = ({ onContinue }) => {
                       color: "red",
                       fontSize: "12px",
                       marginTop: "0.5px",
+                      marginBottom: "0",
                     }}
                   >
                     {errors.email.message}
@@ -231,6 +244,7 @@ const SignUpPageOne = ({ onContinue }) => {
                       color: "red",
                       fontSize: "12px",
                       marginTop: "0.5px",
+                      marginBottom: "0",
                     }}
                   >
                     {errors.password.message}

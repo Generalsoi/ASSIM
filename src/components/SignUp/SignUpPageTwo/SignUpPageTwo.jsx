@@ -56,7 +56,12 @@ const SignUpPageTwo = ({ onContinue }) => {
                 {errors.school && (
                   <p
                     className="error"
-                    style={{ color: "red", fontSize: "12px", marginTop: "0" }}
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      marginTop: "0",
+                      marginBottom: "0",
+                    }}
                   >
                     {errors.school.message}
                   </p>
