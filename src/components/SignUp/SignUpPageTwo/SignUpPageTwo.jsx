@@ -1,24 +1,22 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import "./SignUpPageTwo.css";
 import Logo from "../../../assets/images/Logo.png";
 import LargeLogo from "../../../assets/images/large-logo.png";
 
 const SignUpPageTwo = ({ onContinue }) => {
-  const schema = yup.object({
-    school: yup.string().required(),
-    favoriteSubject: yup.string().required(),
-    leastFavoriteSubject: yup.string().required(),
-  });
+  // const schema = yup.object({
+  //   school: yup.string().required(),
+  //   favoriteSubject: yup.string().required(),
+  //   leastFavoriteSubject: yup.string().required(),
+  // });
 
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm({ criteriaMode: "all" });
 
   const onSubmit = (data) => {
     onContinue(data, 2);
@@ -45,10 +43,24 @@ const SignUpPageTwo = ({ onContinue }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <input
-                  {...register("school")}
+                  {...register("school", {
+                    required: "Please enter your school",
+                    minLength: {
+                      value: 1,
+                      message: "Your school name must exceed 1 characters",
+                    },
+                  })}
                   type="text"
                   placeholder="Where do you school?"
                 />
+                {errors.school && (
+                  <p
+                    className="error"
+                    style={{ color: "red", fontSize: "12px", marginTop: "0" }}
+                  >
+                    {errors.school.message}
+                  </p>
+                )}
               </div>
               <div>
                 <input

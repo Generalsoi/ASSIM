@@ -128,7 +128,7 @@ const SignUpPageOne = ({ onContinue }) => {
 
               <div className="form-one-div">
                 <select
-                  {...register("class", {
+                  {...register("currentClass", {
                     required: "Please select your class",
                   })}
                   id="class"
@@ -144,38 +144,98 @@ const SignUpPageOne = ({ onContinue }) => {
                     </option>
                   ))}
                 </select>
-                {errors.class && (
+                {errors.currentClass && (
                   <p
                     className="error"
-                    style={{ color: "red", fontSize: "12px", marginTop: "0" }}
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      marginTop: "0.5px",
+                    }}
                   >
-                    {errors.class.message}
+                    {errors.currentClass.message}
                   </p>
                 )}
               </div>
 
               <div className="form-one-div">
                 <input
-                  {...register("phoneNumber")}
+                  {...register("phone", {
+                    required: "Please, enter your phone number",
+                  })}
                   type="tel"
                   placeholder="Phone number"
                 />
+                {errors.phone && (
+                  <p
+                    className="error"
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      marginTop: "0.5px",
+                    }}
+                  >
+                    {errors.phone.message}
+                  </p>
+                )}
               </div>
 
               <div className="form-one-div">
                 <input
-                  {...register("email")}
+                  {...register("email", {
+                    required: "Please, enter a valid email address",
+                    pattern: {
+                      value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                      message: "Please enter a valid email address",
+                    },
+                  })}
                   type="email"
                   placeholder="Email address"
                 />
+                {errors.email && (
+                  <p
+                    className="error"
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      marginTop: "0.5px",
+                    }}
+                  >
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
 
               <div className="form-one-div">
                 <input
-                  {...register("password")}
+                  {...register("password", {
+                    required: "Please enter your password",
+                    minLength: {
+                      value: 8,
+                      message: "Your password must exceed 8 characters",
+                    },
+                    pattern: {
+                      value:
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d](?=.*?[#?!.,@$%^&*-]).{8,}$/,
+                      message:
+                        "Your password must include at least one lowercase letter, one uppercase letter, one number and one special character",
+                    },
+                  })}
                   type="password"
                   placeholder="Password"
                 />
+                {errors.password && (
+                  <p
+                    className="error"
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      marginTop: "0.5px",
+                    }}
+                  >
+                    {errors.password.message}
+                  </p>
+                )}
               </div>
 
               <div className="form-one-div">
