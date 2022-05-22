@@ -8,3 +8,11 @@ export async function registerStudent(body) {
     { headers: { "user-type": "student" } }
   );
 }
+
+export async function authenticate(body) {
+  return httpService.post(
+    `${apiEndpoint}/auth?access_token=${accessToken}`,
+    body,
+    { headers: { Authorization: "" } }
+  );
+}

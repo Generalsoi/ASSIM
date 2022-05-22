@@ -1,4 +1,4 @@
 const apiEndpoint = "https://assim-dev.azurewebsites.net";
-const accessToken = "MK8yB6jh2uEG3xHGB9Bpsde8N3R44Iaf";
+const accessToken = "JHiu9iJOltIxmZh1xgEfbqnQkytVrPVP";
 
 export { apiEndpoint, accessToken };

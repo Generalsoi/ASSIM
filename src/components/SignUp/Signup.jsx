@@ -36,13 +36,13 @@ const Signup = () => {
       // submit to server
       try {
         const response = await registerStudent(data);
+        navigate("/completeSignUp");
       } catch (error) {
         if (error.response && error.response.status === 409) {
           alert("User email already registered");
         }
       }
 
-      navigate("/completeSignUp");
       //   navigate("/completeSignUp");
     }
     setStep(index + 1);
