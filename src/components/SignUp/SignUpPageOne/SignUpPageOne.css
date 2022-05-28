@@ -129,3 +129,24 @@
   background-position-y: 50%;
   cursor: pointer;
 }
+
+// responsive styling for sign up page one.
+@media screen and (max-width: 450px) {
+  .signup-pageone {
+    padding: 2% 4%;
+  }
+
+  .signup-pageone .signupcontents {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .signup-pageone .signupcontents .contentone {
+    width: 100%;
+    display: none;
+  }
+
+  .signup-pageone .signupcontents .contenttwo {
+    width: 100%;
+  }
+}
