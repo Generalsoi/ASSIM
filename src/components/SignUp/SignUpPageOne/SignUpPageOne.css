@@ -131,14 +131,13 @@
 }
 
 // responsive styling for sign up page one.
-@media screen and (max-width: 450px) {
+@media all and (max-width: 450px) {
   .signup-pageone {
     padding: 2% 4%;
     width: 100%;
   }
 
   .signup-pageone > .signupcontents {
-    justify-content: center;
     flex-direction: column;
     display: flex;
     align-items: flex-start;
@@ -154,6 +153,6 @@
   }
 
   .content-one h2 {
-    font-size: 2rem;
+    font-size: 0.5rem;
   }
 }
