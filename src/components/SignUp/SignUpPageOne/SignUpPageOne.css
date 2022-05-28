@@ -134,10 +134,13 @@
 @media screen and (max-width: 450px) {
   .signup-pageone {
     padding: 2% 4%;
+    width: 100%;
   }
 
-  .signup-pageone .signupcontents {
+  .signup-pageone > .signupcontents {
+    justify-content: center;
     flex-direction: column;
+    display: flex;
     align-items: flex-start;
   }
 
@@ -148,5 +151,9 @@
 
   .signup-pageone .signupcontents .contenttwo {
     width: 100%;
+  }
+
+  .content-one h2 {
+    font-size: 2rem;
   }
 }
