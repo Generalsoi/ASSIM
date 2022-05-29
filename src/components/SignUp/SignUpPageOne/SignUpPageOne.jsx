@@ -51,7 +51,7 @@ const SignUpPageOne = ({ onContinue }) => {
 
       <div className="signupcontents">
         <div className="content-one contentone">
-          <div>
+          <div className="get-your-profile-ready">
             <h2>Let's get your</h2>
             <h2>profile ready!</h2>
           </div>

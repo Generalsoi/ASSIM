@@ -35,7 +35,7 @@
   width: 40%;
 }
 
-.content-one h2 {
+.get-your-profile-ready h2 {
   font-size: 4rem;
   font-weight: 700;
 }
@@ -130,17 +130,20 @@
   cursor: pointer;
 }
 
+//////////////////////////////////////////
 // responsive styling for sign up page one.
-@media all and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   .signup-pageone {
     padding: 2% 4%;
     width: 100%;
   }
 
-  .signup-pageone > .signupcontents {
+  //this is the mobile styling for signupcontents
+  .signup-pageone .signupcontents {
     flex-direction: column;
     display: flex;
     align-items: flex-start;
+    width: 100%;
   }
 
   .signup-pageone .signupcontents .contentone {
@@ -152,7 +155,8 @@
     width: 100%;
   }
 
-  .content-one h2 {
-    font-size: 0.5rem;
+  .get-your-profile-ready h2 {
+    font-size: 1rem;
+    border: 1px solid red;
   }
 }
