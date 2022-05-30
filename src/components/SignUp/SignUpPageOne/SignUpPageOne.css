@@ -165,11 +165,85 @@
     margin-top: 3rem;
   }
 
+  .signupformone {
+    text-align: center;
+  }
+
+  .form-one {
+    padding: 0 7%;
+  }
+
+  .form-one .form-one-div {
+    width: 100%;
+  }
+
   .form-one div:first-child {
     flex-direction: column;
   }
 
   .form-one div:first-child div {
     width: 100%;
+  }
+
+  .form-one div:first-child div:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 767px) {
+  .signup-pageone {
+    padding: 2% 4%;
+    width: 100%;
+  }
+
+  .signup-pageone .header img {
+    width: 70%;
+  }
+
+  /* //this is the mobile styling for signupcontents */
+  .signup-pageone .signupcontents {
+    /* removed display: flex from here cos repetition; */
+    /* the problem was calling flex-direction before display */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .signup-pageone .signupcontents .contentone {
+    width: 100%;
+    display: none;
+  }
+
+  .signup-pageone .signupcontents .contenttwo {
+    width: 100%;
+  }
+
+  .content-one > div:nth-child(2) {
+    margin-top: 3rem;
+  }
+
+  .signupformone {
+    text-align: center;
+  }
+
+  .form-one {
+    padding: 0 7%;
+  }
+
+  .form-one .form-one-div {
+    width: 100%;
+  }
+
+  .form-one div:first-child {
+    flex-direction: column;
+  }
+
+  .form-one div:first-child div {
+    width: 100%;
+  }
+
+  .form-one div:first-child div:first-child {
+    margin-bottom: 1rem;
   }
 }
