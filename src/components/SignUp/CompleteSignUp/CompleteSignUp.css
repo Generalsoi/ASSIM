@@ -1,52 +1,70 @@
-.complete-signup{
-    padding: 1% 7%;
+.complete-signup {
+  padding: 1% 7%;
 }
 
-.completed-signup-contents{
-    text-align: center;
-    margin-top: 3rem;
+.completed-signup-contents {
+  text-align: center;
+  margin-top: 3rem;
 }
 
-.completed-signup-contents h2, .completed-signup-contents p{
-    color: #000000;
+.completed-signup-contents h2,
+.completed-signup-contents p {
+  color: #000000;
 }
 
-.completed-signup-content>img:first-child{
-    width: 40%;
+.completed-signup-content > img:first-child {
+  width: 40%;
 }
 
-.completed-signup-contents h2{
-    font-size: 3rem;
-    font-weight: 700;
-    margin-top: 4rem;
+.completed-signup-contents h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 4rem;
 }
 
-.first-p{
-    font-size: 0.813rem;
-    font-weight: 400;
-    margin-bottom: 3rem;
+.first-p {
+  font-size: 0.813rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
 }
 
-.second-p{
-    font-size: 0.625rem;
-    font-weight: 300;
+.second-p {
+  font-size: 0.625rem;
+  font-weight: 300;
 }
 
-.warning-message{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.warning-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.completed-signup-btn button{
-    background: #7777F9;
-    border-radius: 3px;
-    width: 15rem;
-    height: 3rem;
-    margin-top: 3rem;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 0.813rem;
+.completed-signup-btn button {
+  background: #7777f9;
+  border-radius: 3px;
+  width: 15rem;
+  height: 3rem;
+  margin-top: 3rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.813rem;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 450px) {
+  .complete-signup {
+    padding: 5% 4%;
+    width: 100%;
+  }
+
+  .completed-signup-contents img:first-child {
+    width: 20%;
+    display: none;
+  }
+
+  .completed-signup-contents h2 {
+    font-size: 2rem;
+  }
 }

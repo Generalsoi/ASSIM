@@ -20,7 +20,7 @@ const CompleteSignUp = () => {
         <p className="first-p">You have completed your ASSIM application</p>
 
         <div className="warning-message">
-          <img src={WarningSign} alt="" />
+          <img src={WarningSign} alt="warning-sign" />
           <div>
             <p className="second-p">
               Your request is being reviewed and will be processed within 2–3

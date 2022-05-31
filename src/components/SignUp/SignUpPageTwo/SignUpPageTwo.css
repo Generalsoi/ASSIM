@@ -79,10 +79,43 @@
     width: 40%;
   }
 
-  /* //this is the mobile styling for signupcontents */
   .signup-pagetwo .signupcontents {
-    /* removed display: flex from here cos repetition; */
-    /* the problem was calling flex-direction before display */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .signup-pagetwo .signupcontents .contentOne {
+    width: 100%;
+    display: none;
+  }
+
+  .signup-pagetwo .signupcontents .contentTwo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-two {
+    padding: 0 7%;
+  }
+
+  .contentTwo .form-two div {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 767px) {
+  .signup-pagetwo {
+    padding: 5% 4%;
+    width: 100%;
+  }
+
+  .signup-pagetwo .header img {
+    width: 40%;
+  }
+
+  .signup-pagetwo .signupcontents {
     flex-direction: column;
     align-items: center;
     justify-content: center;
