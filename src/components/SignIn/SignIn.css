@@ -5,3 +5,7 @@
   align-items: center;
   justify-contents: center;
 }
+
+.sign-in-page div {
+  width: 100%;
+}
