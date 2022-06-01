@@ -12,19 +12,19 @@ const SignIn = () => {
       <div>
         <img src={Logo} alt="assim-logo" />
         <h5>Log in to your account</h5>
-        <p>Welcome back! Please enter your details</p>
+        <p className="info">Welcome back! Please enter your details</p>
 
         <div className="signin-form">
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="signin-form-div">
               <label htmlFor="">Email</label>
               <input type="email" placeholder="Enter your email" />
             </div>
-            <div>
+            <div className="signin-form-div">
               <label htmlFor="password">Password</label>
               <input type="password" placeholder="........." />
             </div>
-            <div>
+            <div className="signin-form-checkbox">
               <div>
                 <input type="checkbox" id="checkbox" />
                 <label htmlFor="checkbox">Remember for 30 days</label>
@@ -32,7 +32,7 @@ const SignIn = () => {
 
               <a href="">Forgot password</a>
             </div>
-            <div>
+            <div className="signin-form-btn">
               <button>Sign in</button>
             </div>
           </form>
