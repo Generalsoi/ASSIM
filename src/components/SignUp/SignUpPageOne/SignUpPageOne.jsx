@@ -44,7 +44,7 @@ const SignUpPageOne = ({ onContinue }) => {
         <p>
           Already have an account?{" "}
           <span>
-            <a href="/">Sign In</a>
+            <Link to="/sign-in">Sign In</Link>
           </span>
         </p>
       </div>
