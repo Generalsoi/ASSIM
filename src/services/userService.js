@@ -9,10 +9,10 @@ export async function registerStudent(body) {
   );
 }
 
-export async function authenticate(body) {
-  return httpService.post(
-    `${apiEndpoint}/auth?access_token=${accessToken}`,
-    body,
-    { headers: { Authorization: "" } }
-  );
-}
+// export async function authenticate(body) {
+//   return httpService.post(
+//     `${apiEndpoint}/auth?access_token=${accessToken}`,
+//     body,
+//     { headers: { "email": data.email, "password": data.password } }
+//   );
+// }

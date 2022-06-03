@@ -14,7 +14,7 @@ const SignIn = () => {
   });
 
   const onSubmit = () => {
-    <Navigate to="/dashboard" />;
+    Navigate("/dashboard");
   };
 
   return (
@@ -95,7 +95,9 @@ const SignIn = () => {
               <a href="">Forgot password</a>
             </div>
             <div className="signin-form-btn">
-              <button type="submit">Sign in</button>
+              <Link to="/dashboard">
+                <button type="submit">Sign in</button>
+              </Link>
             </div>
           </form>
         </div>
