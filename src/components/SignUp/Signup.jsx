@@ -8,6 +8,10 @@ import SignUpPageThree from "./SignUpPageThree/SignUpPageThree";
 
 import { registerStudent } from "../../services/userService";
 
+// import { accessToken, apiEndpoint } from "../config";
+
+const axios = require("axios").default;
+
 const Signup = () => {
   const [data, setData] = useState({
     firstname: "",
@@ -44,6 +48,8 @@ const Signup = () => {
       }
 
       navigate("/completeSignUp");
+
+      // axios.post(`${apiEndpoint}/auth`)
     }
     setStep(index + 1);
   };
