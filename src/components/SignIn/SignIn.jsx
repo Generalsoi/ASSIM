@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./SignIn.css";
 import Logo from "../../assets/images/Logo.png";
@@ -13,6 +13,10 @@ const SignIn = () => {
     criteriaMode: "all",
   });
 
+  const onSubmit = () => {
+    <Navigate to="/dashboard" />;
+  };
+
   return (
     <div className="sign-in-page">
       <div>
@@ -21,7 +25,7 @@ const SignIn = () => {
         <p className="info">Welcome back! Please enter your details</p>
 
         <div className="signin-form">
-          <form onSubmit={handleSubmit()}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="signin-form-div">
               <label htmlFor="">Email</label>
               <input
