@@ -70,11 +70,43 @@
 @media screen and (max-width: 450px) {
   .in-progress-classes {
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-y: scroll;
+    height: 30rem;
+  }
+
+  .in-progress-classes::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .in-progress-classes::-webkit-scrollbar-track {
+    background: #516beb;
+    width: 3px;
+  }
+
+  .in-progress-classes::-webkit-scrollbar-thumb {
+    outline: 5px solid #516beb;
+    border-radius: 13px;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .in-progress-class {
+    width: 60%;
+    margin-bottom: 2rem;
   }
 
   .in-progress-class .class-image {
+    width: 100%;
+  }
+
+  .in-progress-class .class-image img {
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .in-progress-class .class-tutor {
     width: 100%;
   }
 }

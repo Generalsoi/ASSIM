@@ -1,64 +1,107 @@
-.topClassesAndPerformers{
-    margin-top: 4rem;
-    display: flex;
+.topClassesAndPerformers {
+  margin-top: 4rem;
+  display: flex;
 }
 
-.top-classes{
-    flex: 3;
+.top-classes {
+  flex: 3;
 }
 
-.top-performers{
-    flex: 1;
+.top-performers {
+  flex: 1;
 }
 
-.top-classes-div{
-    display: flex;
+.top-classes-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.top-classes-content {
+  width: 29%;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.top-classes-content-img {
+  width: 13rem;
+  height: 8rem;
+  border-radius: 8px;
+}
+
+.top-classes-content-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.top-classes-content-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.top-classes-content-details div {
+  display: flex;
+  align-items: center;
+}
+
+.top-classes-content-details div p {
+  color: #555555;
+  font-size: 0.65rem;
+}
+
+.top-classes-content-details > div .personIcon {
+  color: #b8b8d2;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.top-classes-content-details .no-of-chapters {
+  font-size: 0.75rem;
+  color: #555555;
+}
+
+/* Responsive styling for the student top classes and performers */
+@media screen and (max-width: 450px) {
+  .topClassesAndPerformers {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .top-classes-div {
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 2rem;
-}
-
-.top-classes-content{
-    width: 29%;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-}
-
-.top-classes-content-img{
-    width: 13rem;
-    height: 8rem;
-    border-radius: 8px;
-}
-
-.top-classes-content-img img{
     width: 100%;
-    height: 100%;
-}
+  }
 
-.top-classes-content-details{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5rem;
-}
+  .top-classes {
+    width: 100%;
+    flex: 1;
+    overflow-y: scroll;
+    height: 30rem;
+  }
 
-.top-classes-content-details div{
-    display: flex;
-    align-items: center;
-}
+  .top-performers {
+    flex: 1;
+  }
 
-.top-classes-content-details div p{
-    color: #555555;
-    font-size: 0.65rem;
-}
+  .top-classes-content {
+    width: 80%;
+    margin-right: 0;
+  }
 
-.top-classes-content-details>div .personIcon{
-    color: #B8B8D2;
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
-}
+  .top-classes-content-img {
+    width: 80%;
+  }
 
-.top-classes-content-details .no-of-chapters{
-    font-size: 0.75rem;
-    color: #555555;
+  .top-classes-content-img img {
+    object-fit: contain;
+  }
+
+  .top-classes-content-details {
+    width: 80%;
+  }
 }

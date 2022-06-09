@@ -29,6 +29,8 @@ const Dashboard = () => {
         <img src={Logo} alt="assim-logo" />
         <MenuIcon className="hamburger" onClick={handleClick} />
       </div>
+
+      {open && <div className="overlay" />}
     </div>
   );
 };

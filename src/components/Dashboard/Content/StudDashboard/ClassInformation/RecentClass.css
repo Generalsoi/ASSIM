@@ -70,10 +70,42 @@
 @media screen and (max-width: 450px) {
   .recent-classes {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow-y: scroll;
+    height: 30rem;
+  }
+
+  .recent-classes::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .recent-classes::-webkit-scrollbar-track {
+    background: #516beb;
+    width: 3px;
+  }
+
+  .recent-classes::-webkit-scrollbar-thumb {
+    outline: 5px solid #516beb;
+    border-radius: 13px;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .recent-class {
+    width: 80%;
+    margin-bottom: 2rem;
   }
 
   .recent-class .class-image {
+    width: 100%;
+  }
+
+  .recent-class .class-image img {
+    object-fit: cover;
+  }
+
+  .recent-class .class-tutor {
     width: 100%;
   }
 }
