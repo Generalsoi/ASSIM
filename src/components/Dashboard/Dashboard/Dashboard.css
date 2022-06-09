@@ -57,8 +57,10 @@
     position: absolute;
     left: -100vw;
     top: 0;
+    background: #fff;
     z-index: 5;
-    background: #516beb;
+    height: 100vh;
+    padding-top: 2rem;
     width: 70%;
     border: none;
     border-top-left-radius: 0;
