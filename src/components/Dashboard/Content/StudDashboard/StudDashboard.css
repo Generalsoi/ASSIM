@@ -1,17 +1,21 @@
-.student-dashboard{
-    background: #EFEFFF;
+.student-dashboard {
+  background: #efefff;
 }
 
-.welcome-message{
-    margin-top: 2rem;
+.welcome-message {
+  margin-top: 2rem;
 }
 
-.welcome-message h2{
-    font-size: 2.18rem;
-    font-family: 'DM Sans', sans-serif;
+.welcome-message h2 {
+  font-size: 2.18rem;
+  font-family: "DM Sans", sans-serif;
 }
 
-.welcome-message p{
-    font-size: 0.75rem;
-    color: #8A8A8A;
+.welcome-message p {
+  font-size: 0.75rem;
+  color: #8a8a8a;
+}
+
+/* Responsive styling for the student dashboard header */
+@media screen and (max-width: 450px) {
 }

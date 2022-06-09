@@ -5,25 +5,30 @@ import Sidebar from "../Sidebar/Sidebar";
 import Content from "../Content/Content/Content";
 import StudDashboard from "./../Content/StudDashboard/StudDashboard";
 import Classes from "./../Content/Classes/Classes";
+import Logo from "../../../assets/images/Logo.png";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Dashboard = () => {
   const [activeMenu, setActiveMenu] = useState("menu1");
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
   return (
     <div className="dashboard">
-      <div className="sidebar">
+      <div className={open ? "sidebar-mobile open" : "sidebar"}>
         <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       </div>
       <div className="content">
         <Content activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       </div>
-      {/* <Routes>
-        <Route
-          path="/studDashboard"
-          element={<StudDashboard className="content" />}
-        />
-        <Route path="/classes" element={<Classes className="content" />} />
-      </Routes> */}
+
+      <div className="mobile-view">
+        <img src={Logo} alt="assim-logo" />
+        <MenuIcon className="hamburger" onClick={handleClick} />
+      </div>
     </div>
   );
 };
