@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./Dashboard.css";
 import Sidebar from "../Sidebar/Sidebar";
 import Content from "../Content/Content/Content";
-import StudDashboard from "./../Content/StudDashboard/StudDashboard";
-import Classes from "./../Content/Classes/Classes";
 import Logo from "../../../assets/images/Logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 
