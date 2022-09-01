@@ -4,11 +4,69 @@
 }
 
 .top-classes {
-  flex: 3;
+  flex: 2.8;
 }
 
 .top-performers {
-  flex: 1;
+  flex: 1.2;
+}
+
+.top-performers-header {
+  margin-bottom: 1.5rem;
+}
+
+.top-performers-body {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 0.8rem;
+}
+
+.top-performers-body-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.performers-divider {
+  border: 1px solid #282C38;
+  margin-bottom: 2rem;
+}
+
+.language-div {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+}
+
+.language-icon {
+  margin-right: 0.5rem;
+}
+
+.language-div p {
+  font-weight: 400;
+  font-size: 13px;
+  color: #121212;
+}
+
+.language-div svg {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.show-more-btn button {
+  background: #5D5FEF;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  height: 35px;
+  padding: 0 0.5rem;
+  cursor: pointer;
 }
 
 .top-classes-div {
@@ -20,13 +78,13 @@
 
 .top-classes-content {
   width: 29%;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+  margin-bottom: 1.7rem;
+  margin-right: 1.7rem;
 }
 
 .top-classes-content-img {
-  width: 13rem;
-  height: 8rem;
+  width: 100%;
+  height: 10rem;
   border-radius: 8px;
 }
 
@@ -48,11 +106,12 @@
 }
 
 .top-classes-content-details div p {
-  color: #555555;
+  font-weight: 700;
   font-size: 0.65rem;
+  color: #555555;
 }
 
-.top-classes-content-details > div .personIcon {
+.top-classes-content-details>div .personIcon {
   color: #b8b8d2;
   font-size: 0.8rem;
   margin-right: 0.5rem;
@@ -61,6 +120,57 @@
 .top-classes-content-details .no-of-chapters {
   font-size: 0.75rem;
   color: #555555;
+}
+
+.performing-student-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  justify-content: space-around;
+}
+
+.student-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.8rem;
+}
+
+.student-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.performing-student-item p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #121212;
+  margin-right: 1.2rem;
+}
+
+.perfomance-range{
+  display: flex;
+  align-items: center;
+}
+
+.perfomance-range svg{
+  margin-right: 1rem;
+}
+
+.perfomance-range .green{
+  color: #30E0A1;
+}
+.perfomance-range .red{
+  color: #FA2256;
+}
+.perfomance-range .orange{
+  color: #FFB545;
+}
+.perfomance-range .blue{
+  color: #246CF9;
 }
 
 /* Responsive styling for the student top classes and performers */
