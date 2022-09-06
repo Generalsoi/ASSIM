@@ -74,7 +74,7 @@ const UpgradeModal = (props) => {
           </div>
 
           <div className="more-information">
-            <a href="">
+            <a href="/">
               <p>Read more information about our plans</p>
             </a>
           </div>

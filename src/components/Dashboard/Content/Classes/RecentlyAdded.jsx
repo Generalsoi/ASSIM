@@ -1,12 +1,11 @@
 import React from "react";
-import "./FeaturedClasses.css";
 import PersonIcon from "@mui/icons-material/Person";
-import ClassOneImg from "../../../../../assets/images/classone.png";
-import ClassTwoImg from "../../../../../assets/images/classtwo.png";
-import ClassThreeImg from "../../../../../assets/images/classthree.png";
-import ClassFourImg from "../../../../../assets/images/classfour.png";
+import ClassOneImg from "../../../../assets/images/classone.png";
+import ClassTwoImg from "../../../../assets/images/classtwo.png";
+import ClassThreeImg from "../../../../assets/images/classthree.png";
+import ClassFourImg from "../../../../assets/images/classfour.png";
 
-const FeaturedClasses = () => {
+const RecentlyAdded = () => {
   const recentClassContents = [
     {
       id: "1",
@@ -40,10 +39,10 @@ const FeaturedClasses = () => {
 
   return (
     <React.Fragment>
-      <h5 className="class-section-heading">Featured Classes</h5>
-      <div className="featured-classes">
+      <h5 className="class-section-heading">Recently Added</h5>
+      <div className="single-classes">
         {recentClassContents.map((content) => (
-          <div className="featured-class" key={content.id}>
+          <div className="single-class" key={content.id}>
             <div className="class-image">
               <img src={content.image} alt={content.image} />
             </div>
@@ -64,4 +63,4 @@ const FeaturedClasses = () => {
   );
 };
 
-export default FeaturedClasses;
+export default RecentlyAdded;

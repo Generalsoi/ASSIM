@@ -6,11 +6,9 @@ import SignUpPageOne from "./SignUpPageOne/SignUpPageOne";
 import SignUpPageTwo from "./SignUpPageTwo/SignUpPageTwo";
 import SignUpPageThree from "./SignUpPageThree/SignUpPageThree";
 
-import { registerStudent } from "../../services/userService";
+// import { registerStudent } from "../../services/userService";
 
 // import { accessToken, apiEndpoint } from "../config";
-
-const axios = require("axios").default;
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -39,7 +37,7 @@ const Signup = () => {
     if (step === 3) {
       // submit to server
       try {
-        const response = await registerStudent(data);
+        // const response = await registerStudent(data);
         // navigate("/completeSignUp");
       } catch (error) {
         if (error.response && error.response.status === 409) {

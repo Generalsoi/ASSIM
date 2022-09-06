@@ -16,6 +16,7 @@
   color: #8a8a8a;
 }
 
-/* Responsive styling for the student dashboard header */
-@media screen and (max-width: 450px) {
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+  
 }

@@ -1,12 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-// import { yupResolver } from "@hookform/resolvers/yup";
-// import * as yup from "yup";
 import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
-import Arrow from "../../../assets/images/arrowicon.png";
-import dataObject from "../data.js";
 
 const SignUpPageOne = ({ onContinue }) => {
   const classesAvailable = ["Primary 5", "Primary 6", "JSS1", "JSS3"];
