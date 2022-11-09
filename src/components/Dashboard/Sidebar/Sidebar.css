@@ -3,7 +3,7 @@
 }
 
 .sidebar-links{
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 .sidebar-links ul{ 
@@ -13,7 +13,7 @@
 .sidebar-link{
     display: flex;
     align-items: center;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1rem;
     line-height: 24px;
     color: #8A8A8A;
     cursor: pointer;
@@ -34,7 +34,7 @@
 .sidebar-btns{
     display: flex;
     flex-direction: column;
-    margin-top: 6rem;
+    margin-top: 3rem;
     text-align: center;
     padding: 0 2rem;
 }

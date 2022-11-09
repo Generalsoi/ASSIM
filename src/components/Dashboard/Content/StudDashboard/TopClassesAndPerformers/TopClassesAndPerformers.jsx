@@ -1,6 +1,6 @@
 import React from "react";
 import "./TopClassesAndPerformers.css";
-import PersonIcon from "@mui/icons-material/Person";
+// import PersonIcon from "@mui/icons-material/Person";
 import TopClassOne from "../../../../../assets/images/topclassone.png";
 import TopClassTwo from "../../../../../assets/images/topclasstwo.png";
 import TopClassThree from "../../../../../assets/images/topclassthree.png";
@@ -8,44 +8,72 @@ import TopClassFour from "../../../../../assets/images/topclassfour.png";
 import TopClassFive from "../../../../../assets/images/topclassfive.png";
 import TopClassSix from "../../../../../assets/images/topclasssix.png";
 import Avatar from "../../../../../assets/images/Avatar.png";
+import Play from "../../../../../assets/images/play.png";
 
 const TopClassesAndPerformers = () => {
   const topClassesContent = [
     {
       id: 1,
       title: "ASSIM",
-      noOfChapters: 9,
+      noOfChapters: 1,
       image: <img src={TopClassOne} alt="top class one" />,
+      playId: 100,
     },
     {
       id: 2,
       title: "ASSIM",
-      noOfChapters: 9,
+      noOfChapters: 2,
       image: <img src={TopClassTwo} alt="top class two" />,
+      playId: 200,
     },
     {
       id: 3,
       title: "ASSIM",
-      noOfChapters: 9,
+      noOfChapters: 3,
       image: <img src={TopClassThree} alt="top class three" />,
+      playId: 300,
     },
     {
       id: 4,
       title: "Ms. Faith Okeke",
-      noOfChapters: 19,
+      noOfChapters: 4,
       image: <img src={TopClassFour} alt="top class four" />,
+      playId: 400,
     },
     {
       id: 5,
       title: "Ms. Faith Okeke",
-      noOfChapters: 19,
+      noOfChapters: 5,
       image: <img src={TopClassFive} alt="top class five" />,
+      playId: 500,
     },
     {
       id: 6,
       title: "Ms. Faith Okeke",
-      noOfChapters: 19,
+      noOfChapters: 6,
       image: <img src={TopClassSix} alt="top class six" />,
+      playId: 600,
+    },
+    {
+      id: 7,
+      title: "Ms. Faith Okeke",
+      noOfChapters: 6,
+      image: <img src={TopClassSix} alt="top class six" />,
+      playId: 700,
+    },
+    {
+      id: 8,
+      title: "Ms. Faith Okeke",
+      noOfChapters: 6,
+      image: <img src={TopClassSix} alt="top class six" />,
+      playId: 800,
+    },
+    {
+      id: 9,
+      title: "Ms. Faith Okeke",
+      noOfChapters: 6,
+      image: <img src={TopClassSix} alt="top class six" />,
+      playId: 900,
     },
   ];
 
@@ -55,9 +83,70 @@ const TopClassesAndPerformers = () => {
         <h4>Top Classes</h4>
 
         <div className="top-classes-div">
+
           {topClassesContent.map((content) => (
+            <div className="top_class_video" key={content.id}>
+              <video
+                id={content.id}
+                width="100%"
+                height="100%"
+                // loop
+                // onMouseOver={(event) => event.target.play()}
+                // onMouseOut={(event) => event.target.pause()}
+              >
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+              </video>
+              <div className="video_text" 
+               id={content.playId}
+              >
+                <h5>Intro Tech</h5>
+
+                <div className="play_btn">
+                  <img src={Play} alt="paly"
+                    onClick={() => {
+                      const video = document.getElementById(content.id);
+                      video.play();
+
+                      // show video controls when video is playing
+                      video.onplaying = () => {
+                        video.controls = true;
+                      };
+                      
+                      // hide text when video is playing
+                      const videoText = document.getElementById(content.playId);
+                      videoText.style.display = "none";
+
+                      // show text when video has ended
+                      video.addEventListener("ended", () => {
+                        videoText.style.display = "flex";
+                      });
+                      
+                      // show text when video is paused
+                      video.addEventListener("pause", () => {
+                        videoText.style.display = "flex";
+                        video.controls = false;
+                      });
+                      
+                    }}
+                  />
+                </div>
+
+                <div className="video_text_bottom">
+                  <p>Intro.mp4</p>
+                  <span>12.6 MB</span>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* {topClassesContent.map((content) => (
             <div className="top-classes-content" key={content.id}>
+
+              
               <div className="top-classes-content-img">{content.image}</div>
+
+
+
               <div className="top-classes-content-details">
                 <div>
                   <PersonIcon className="personIcon" />
@@ -68,7 +157,7 @@ const TopClassesAndPerformers = () => {
                 </p>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
 
