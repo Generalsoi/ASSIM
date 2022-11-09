@@ -1,0 +1,92 @@
+.asignment-item-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.assignment-item {
+    padding: 1.5rem;
+    background: #FFFFFF;
+    box-shadow: 0px 8.95px 13.425px -4.475px rgba(184, 184, 210, 0.2);
+    border-radius: 13.425px;
+    width: 18.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.assignment-item:last-child{
+    margin-right: 0;
+}
+
+.asignment-item-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.asignment-item-top svg {
+    margin-right: 1rem;
+}
+
+.assignment-subject-tutor h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.assignment-subject-tutor p {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #9E9E9E;
+}
+
+.assingment-item-body {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.assingment-dates p {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #C1C1CE;
+    margin-bottom: 0.4rem;
+}
+
+.assingment-dates h6 {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.assignment-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.assigment-status {
+    width: 50%;
+    border-radius: 6.5px;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.submitted {
+    background: #F3E4FF;
+}
+
+.submitted p {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #8F00FF;
+}
+
+.unattended{
+    background: #E8EFF6;
+}
+
+.unattended p{
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #121212;
+}

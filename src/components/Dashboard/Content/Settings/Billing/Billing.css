@@ -1,11 +1,200 @@
-.billing-heading h5{
+.billing-heading {
+    margin-bottom: 2rem;
+}
+
+.billing-heading h5 {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.billing-heading p{
+.billing-heading p {
     font-size: 0.8rem;
     color: #667085;
     margin-top: 0.5rem;
+}
+
+.plan-payment-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.plan-payment {
+    background: #FFFFFF;
+    box-shadow: 0px 0.932331px 2.79699px rgba(16, 24, 40, 0.1), 0px 0.932331px 1.86466px rgba(16, 24, 40, 0.06);
+    border-radius: 8px;
+    width: 46%;
+    padding: 1.5rem;
+}
+
+.plan-payment-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.plan-payment-top h5 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #101828;
+    margin-bottom: 0.7rem;
+}
+
+.plan-payment-top p {
+    font-weight: 400;
+    font-size: 12px;
+    color: #667085;
+}
+
+.plan-amount {
+    display: flex;
+    align-items: baseline;
+}
+
+.plan-amount h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    color: #101828;
+}
+
+.plan-amount p {
+    font-weight: 400;
+    font-size: 12px;
+    color: #667085;
+}
+
+.courses-taken {
+    margin-bottom: 2rem;
+}
+
+.upgrade-plan {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.plan-payment-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.upgrade-plan p {
+    font-weight: 500;
+    font-size: 12px;
+    color: #7777F9;
+}
+
+.payment-card {
+    background: #FFFFFF;
+    border: 0.932331px solid #E4E7EC;
+    border-radius: 7.45865px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-type {
+    background: #FFFFFF;
+    border: 0.932331px solid #F2F4F7;
+    border-radius: 5.59399px;
+    padding: 0rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    margin-right: 1.5rem;
+}
+
+.card-type h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #172B85;
+}
+
+.card-info h6 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #344054;
+}
+
+.card-info p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #667085;
+}
+
+.card-email {
+    display: flex;
+    align-items: center;
+}
+
+.edit-card button {
+    border: 0.932331px solid #D0D5DD;
+    box-shadow: 0px 0.9px 1.8px rgba(16, 24, 40, 0.05);
+    border-radius: 7px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+}
+
+.add-payment-method {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.add-payment-method p {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #667085;
+}
+
+.billing-invoicing-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.billing-invoincing-head-text h5 {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #101828;
+    margin-bottom: 0.2rem;
+}
+
+.billing-invoincing-head-text p {
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: #667085;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 0.907801px solid #D0D5DD;
+    box-shadow: 0px 0.907801px 1.8156px rgba(16, 24, 40, 0.05);
+    border-radius: 7.26241px;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+
+.download-btn p {
+    margin-left: 0.8rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #344054;
 }

@@ -93,8 +93,12 @@
 
   .student-dashboard-header input {
     width: 100%;
-    margin-top: 1rem;
-    background-position-x: 1%;
+    margin-top: 2rem;
+  }
+
+  .student-dashboard-header-details {
+    width: 100%;
+    justify-content: space-around;
   }
 }
 

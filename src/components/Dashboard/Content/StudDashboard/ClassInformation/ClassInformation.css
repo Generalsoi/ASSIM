@@ -23,15 +23,13 @@
 .active::after {
   content: "";
   display: block;
-  border: 3px solid #7777f9;
+  border: 2px solid #7777f9;
   border-radius: 10px;
-  width: 48px;
-  margin-left: 3.5rem;
   background-color: #7777f9;
 }
 
 .class-info-contents {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 @media screen and (max-width: 450px) {

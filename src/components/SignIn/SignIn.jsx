@@ -92,7 +92,7 @@ const SignIn = () => {
                 <label htmlFor="checkbox">Remember for 30 days</label>
               </div>
 
-              <a href="">Forgot password</a>
+              <a href="/forgot-password">Forgot password</a>
             </div>
             <div className="signin-form-btn">
               <Link to="/dashboard">

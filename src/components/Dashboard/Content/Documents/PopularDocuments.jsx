@@ -1,9 +1,8 @@
 import React from "react";
-import "./PopularDocuments.css";
-import JpegImg from "../../../../../assets/images/bxs-file-jpg.png";
-import DocImg from "../../../../../assets/images/bxs-file-doc.png";
-import JsonImg from "../../../../../assets/images/bxs-file-json.png";
-import TxtImg from "../../../../../assets/images/bxs-file-txt.png";
+import JpegImg from "../../../../assets/images/bxs-file-jpg.png";
+import DocImg from "../../../../assets/images/bxs-file-doc.png";
+import JsonImg from "../../../../assets/images/bxs-file-json.png";
+import TxtImg from "../../../../assets/images/bxs-file-txt.png";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 
 const PopularDocuments = () => {
@@ -40,14 +39,14 @@ const PopularDocuments = () => {
 
   return (
     <React.Fragment>
-      <h5 className="popular-documents-section-heading">Popular Documents</h5>
-      <div className="popular-documents">
+      <h5 className="documents-section-heading">Popular Documents</h5>
+      <div className="documents">
         {newDocumentContents.map((content) => (
-          <div className="popular-document" key={content.id}>
-            <div className="popular-document-img">
+          <div className="document" key={content.id}>
+            <div className="document-img">
               <img src={content.image} alt="" />
             </div>
-            <div className="popular-document-details">
+            <div className="document-details">
               <div>
                 <p>{content.docName}</p>
                 <p>{content.docSize}</p>

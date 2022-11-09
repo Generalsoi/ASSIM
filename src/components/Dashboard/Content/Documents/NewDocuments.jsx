@@ -1,12 +1,11 @@
 import React from "react";
-import "./AssimDocuments.css";
-import JpegImg from "../../../../../assets/images/bxs-file-jpg.png";
-import DocImg from "../../../../../assets/images/bxs-file-doc.png";
-import JsonImg from "../../../../../assets/images/bxs-file-json.png";
-import TxtImg from "../../../../../assets/images/bxs-file-txt.png";
+import JpegImg from "../../../../assets/images/bxs-file-jpg.png";
+import DocImg from "../../../../assets/images/bxs-file-doc.png";
+import JsonImg from "../../../../assets/images/bxs-file-json.png";
+import TxtImg from "../../../../assets/images/bxs-file-txt.png";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 
-const AssimDocuments = () => {
+const NewDocuments = () => {
   const newDocumentContents = [
     {
       id: 1,
@@ -40,14 +39,14 @@ const AssimDocuments = () => {
 
   return (
     <React.Fragment>
-      <h5 className="assim-documents-section-heading">Assim Documents</h5>
-      <div className="assim-documents">
+      <h5 className="documents-section-heading">New Documents</h5>
+      <div className="documents">
         {newDocumentContents.map((content) => (
-          <div className="assim-document" key={content.id}>
-            <div className="assim-document-img">
+          <div className="document" key={content.id}>
+            <div className="document-img">
               <img src={content.image} alt="" />
             </div>
-            <div className="assim-document-details">
+            <div className="document-details">
               <div>
                 <p>{content.docName}</p>
                 <p>{content.docSize}</p>
@@ -64,4 +63,4 @@ const AssimDocuments = () => {
   );
 };
 
-export default AssimDocuments;
+export default NewDocuments;

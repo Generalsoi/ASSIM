@@ -8,8 +8,6 @@ const Plan = () => {
   const { active, setActive } = useState("plan1");
 
   const activeClassOne = active === "plan1" && "active";
-  const activeClassTwo = active === "plan2" && "active";
-  const activeClassThree = active === "plan3" && "active";
 
   return (
     <div className="plan">

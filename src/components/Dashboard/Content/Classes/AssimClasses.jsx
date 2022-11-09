@@ -1,10 +1,9 @@
 import React from "react";
-import "./AssimClasses.css";
 import PersonIcon from "@mui/icons-material/Person";
-import ClassOneImg from "../../../../../assets/images/classone.png";
-import ClassTwoImg from "../../../../../assets/images/classtwo.png";
-import ClassThreeImg from "../../../../../assets/images/classthree.png";
-import ClassFourImg from "../../../../../assets/images/classfour.png";
+import ClassOneImg from "../../../../assets/images/classone.png";
+import ClassTwoImg from "../../../../assets/images/classtwo.png";
+import ClassThreeImg from "../../../../assets/images/classthree.png";
+import ClassFourImg from "../../../../assets/images/classfour.png";
 
 const AssimClasses = () => {
   const recentClassContents = [
@@ -41,9 +40,9 @@ const AssimClasses = () => {
   return (
     <React.Fragment>
       <h5 className="class-section-heading">Assim Classes</h5>
-      <div className="assim-classes">
+      <div className="single-classes">
         {recentClassContents.map((content) => (
-          <div className="assim-class" key={content.id}>
+          <div className="single-class" key={content.id}>
             <div className="class-image">
               <img src={content.image} alt={content.image} />
             </div>
