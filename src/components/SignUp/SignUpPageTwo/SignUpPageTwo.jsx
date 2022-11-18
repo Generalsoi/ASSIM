@@ -6,12 +6,7 @@ import Logo from "../../../assets/images/Logo.png";
 import LargeLogo from "../../../assets/images/large-logo.png";
 
 const SignUpPageTwo = ({ onContinue }) => {
-  // const schema = yup.object({
-  //   school: yup.string().required(),
-  //   favoriteSubject: yup.string().required(),
-  //   leastFavoriteSubject: yup.string().required(),
-  // });
-
+  
   const {
     register,
     formState: { errors },
@@ -20,7 +15,6 @@ const SignUpPageTwo = ({ onContinue }) => {
 
   const onSubmit = (data) => {
     onContinue(data, 2);
-    // navigate("/studentSignUpPageThree");
   };
 
   return (
