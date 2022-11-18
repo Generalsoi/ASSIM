@@ -1,16 +1,20 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import SignUpPageOne from "./SignUpPageOne/SignUpPageOne";
 import SignUpPageTwo from "./SignUpPageTwo/SignUpPageTwo";
 import SignUpPageThree from "./SignUpPageThree/SignUpPageThree";
+import BackdropLoader from '../Loader/BackdropLoader';
 
-// import { registerStudent } from "../../services/userService";
-
-// import { accessToken, apiEndpoint } from "../config";
+import { useDispatch, useSelector } from 'react-redux';
+import { clearErrors, clearState, register, createStudent, login } from '../../redux/auth/AuthActions';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     firstname: "",
     lastname: "",
@@ -26,34 +30,48 @@ const Signup = () => {
     stateOfOrigin: "",
     lga: "",
     noOfSubjects: "",
+    userId: "",
+    token: "",
   });
 
   const [step, setStep] = useState(1);
-  const navigate = useNavigate();
+
+  const { loading, error, success } = useSelector((state) => state.userRegister);
+
+  React.useEffect(() => {
+    if (error) {
+      toast.error(error);
+      dispatch(clearErrors());
+    }
+
+    if (success) {
+      dispatch(clearState());
+      // login user
+      dispatch(login(data.email, data.password));
+
+      // navigate to complete signup page
+      setTimeout(() => {
+        navigate("/completeSignUp");
+      }, 1000);
+    }
+  }, [success, loading, error, dispatch, navigate, data]);
+
 
   const onContinue = async (input, index) => {
     setData({ ...data, ...input });
 
     if (step === 3) {
       // submit to server
-      try {
-        // const response = await registerStudent(data);
-        // navigate("/completeSignUp");
-      } catch (error) {
-        if (error.response && error.response.status === 409) {
-          alert("User email already registered");
-        }
-      }
-
-      navigate("/completeSignUp");
-
-      // axios.post(`${apiEndpoint}/auth`)
+      dispatch(createStudent(data));
     }
     setStep(index + 1);
   };
   console.log(data);
+
+
   return (
     <>
+      {loading && <BackdropLoader />}
       {step === 1 && <SignUpPageOne onContinue={onContinue} />}
       {step === 2 && <SignUpPageTwo onContinue={onContinue} />}
       {step === 3 && <SignUpPageThree onContinue={onContinue} />}

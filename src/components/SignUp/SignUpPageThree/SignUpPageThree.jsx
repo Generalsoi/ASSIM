@@ -6,14 +6,6 @@ import Logo from "../../../assets/images/Logo.png";
 import LargeLogo from "../../../assets/images/large-logo.png";
 
 const SignUpPageThree = ({ onContinue }) => {
-  // const schema = yup.object({
-  //   address: yup.string().required(),
-  //   school: yup.string().required(),
-  //   gender: yup.string().required(),
-  //   stateOfOrigin: yup.string().required(),
-  //   lga: yup.string().required(),
-  //   noOfSubjects: yup.string(),
-  // });
 
   const {
     register,
@@ -23,7 +15,6 @@ const SignUpPageThree = ({ onContinue }) => {
 
   const onSubmit = (data) => {
     onContinue(data, 3);
-    // navigate("/completeSignUp");
   };
 
   return (
