@@ -45,7 +45,7 @@ const Settings = () => {
               >
                 Password
               </li>
-              <li
+              {/* <li
                 className={
                   (activeTab === "tab3" && "active") + " settings-content-heading"
                 }
@@ -68,7 +68,7 @@ const Settings = () => {
                 onClick={() => setActiveTab("tab5")}
               >
                 Notification
-              </li>
+              </li> */}
             </ul>
 
             <div className="settings-info-contents">

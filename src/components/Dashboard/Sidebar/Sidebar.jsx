@@ -116,13 +116,6 @@ const Sidebar = (props) => {
       </div>
 
       <div className="sidebar-btns">
-        <button
-          className="upgrade-plan-btn"
-          onClick={() => setUpgradeModal(true)}
-        >
-          Upgrade Plan
-        </button>
-        <button className="contact-support-btn">Contact Support</button>
         <div className="sign-out" onClick={handleLogout}>
           <LogoutIcon />
           <p>Sign Out</p>

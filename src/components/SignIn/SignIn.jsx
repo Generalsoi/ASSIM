@@ -5,6 +5,7 @@ import "./SignIn.css";
 import Logo from "../../assets/images/Logo.png";
 import { accessToken, apiEndpoint } from "../../config";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -30,13 +31,16 @@ const SignIn = () => {
           'Content-Type': 'application/json',
         },
       })
-      if (response.data) {
-        localStorage.setItem("userInfo", JSON.stringify(response.data));
-        navigate("/dashboard")
+      if (response.data.user.profileType !== "student") {
+        toast.error("Invalid User Type")
       } else {
-        console.log("Invalid Login attempt")
+        if (response.data) {
+          localStorage.setItem("userInfo", JSON.stringify(response.data));
+          navigate("/dashboard")
+        } else {
+          toast.error("Invalid Login attempt")
+        }
       }
-      // response.data ? navigate("/dashboard") : console.log("Invalid Login attempt")
     } catch (error) {
       console.log(error)
     }

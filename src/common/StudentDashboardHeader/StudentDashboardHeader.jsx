@@ -1,8 +1,6 @@
 import React from "react";
 import "./StudentDashboardHeader.css";
-import QnA from "../../assets/images/questionandanswer.png";
 import NotificationsSharpIcon from "@mui/icons-material/NotificationsSharp";
-import DropDown from "../../assets/images/dropdown.png";
 import axios from "axios";
 import { apiEndpoint } from "../../config";
 import { useEffect } from "react";
