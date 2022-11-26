@@ -1,37 +1,33 @@
 import React from "react";
 import "./StudentDashboardHeader.css";
 import NotificationsSharpIcon from "@mui/icons-material/NotificationsSharp";
-import axios from "axios";
-import { apiEndpoint } from "../../config";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import useAxiosGet from '../../customHooks/useAxiosGet';
 
 const StudentDashboardHeader = () => {
-  const [userData, setUserData] = useState({})
+
+  const [userProfile, setUserProfile] = useState({});
+
+  const { userData } = useSelector((state) => state.userLogin);
 
   useEffect(() => {
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"))
-    if (!userInfo) {
-      window.location.href = "/sign-in"
+    if (userData === null) {
+      window.location.href = "/sign-in";
     }
-    fetchData(userInfo)
-  }, [])
+  }, [userData]);
 
-  const fetchData = async (userInfo) => {
-    try {
-      const response = await axios({
-        method: "GET",
-        url: `${apiEndpoint}users/me`,
-        headers: {
-          "Content-Type": "multipart/form-data",
-          "Authorization": "Bearer " + userInfo.token,
-        },
-      });
-      setUserData(response.data)
-    } catch (error) {
-      console.log(error)
+  const { response } = useAxiosGet({
+    method: 'get',
+    url: `users/me`,
+  });
+
+  React.useEffect(() => {
+    if (response) {
+      setUserProfile(response);
     }
-  }
+  }, [response]);
 
   return (
     <div className="student-dashboard-header">
@@ -47,13 +43,13 @@ const StudentDashboardHeader = () => {
           <img
             alt="user-icon"
             className="student-user-icon"
-            src={userData.picture}
+            src={userProfile.picture}
           />
           <div>
             <span>
-              {userData.name}
+              {userProfile.name}
             </span>
-            <span>{userData.profileType}</span>
+            <span>{userProfile.profileType}</span>
           </div>
         </div>
       </div>

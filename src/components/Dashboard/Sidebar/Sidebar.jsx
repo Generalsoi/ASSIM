@@ -3,17 +3,17 @@ import "./Sidebar.css";
 import Logo from "../../../assets/images/Logo.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 import UpgradeModal from "../UpgradeModal/UpgradeModal";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
 const Sidebar = (props) => {
   const [upgrade, setUpgradeModal] = useState(false);
-  const location = useLocation()
+  const location = useLocation();
   const [current_path, setCurrentPath] = useState("");
 
   useEffect(() => {
-    setCurrentPath(location.pathname)
-  }, [location])
+    setCurrentPath(location.pathname);
+  }, [location]);
 
   const handleMenu1 =
     (current_path === "/dashboard" && "activeMenu") + " sidebar-link";
@@ -29,9 +29,11 @@ const Sidebar = (props) => {
     (current_path === "/settings" && "activeMenu") + " sidebar-link";
 
   const handleLogout = () => {
-    localStorage.removeItem("userInfo")
-    window.location.href = '/sign-in';
-  }
+    if (window.confirm("Are you sure you want to logout?")) {
+      localStorage.clear();
+      window.location.href = '/sign-in';
+    }
+  };
 
   return (
     <div className="main-sidebar">

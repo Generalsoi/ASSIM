@@ -6,14 +6,27 @@ import TopClassesAndPerformers from "./TopClassesAndPerformers/TopClassesAndPerf
 import Sidebar from "../../Sidebar/Sidebar";
 import Logo from "../../../../assets/images/Logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
+import useAxiosGet from '../../../../customHooks/useAxiosGet';
 
 const StudDashboard = () => {
   const [activeMenu, setActiveMenu] = useState("menu1");
   const [open, setOpen] = useState(false);
+  const [userProfile, setUserProfile] = useState({});
 
   const handleClick = () => {
     setOpen(!open);
   };
+
+  const { response } = useAxiosGet({
+    method: 'get',
+    url: `users/me`,
+  });
+
+  React.useEffect(() => {
+    if (response) {
+      setUserProfile(response);
+    }
+  }, [response]);
 
   return (
 
@@ -27,7 +40,7 @@ const StudDashboard = () => {
 
           <div className="welcome-message">
             <h2>
-              Welcome back, <span>David</span>
+              Welcome back, <span>{userProfile.name}</span>
             </h2>
             <p>
               We have saved your prevous classes for you so you can keep up and

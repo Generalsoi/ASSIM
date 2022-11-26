@@ -10,8 +10,8 @@ const reducer = combineReducers({
 
 });
 
-const userTokenFromStorage = sessionStorage.getItem("userInfo")
-  ? JSON.parse(sessionStorage.getItem("userInfo"))
+const userTokenFromStorage = localStorage.getItem("userInfo")
+  ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
 
 const initialState = {
