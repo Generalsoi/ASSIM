@@ -18,7 +18,7 @@ const StudentDashboardHeader = () => {
     }
   }, [userData]);
 
-  const { response, loading } = useAxiosGet({
+  const { response } = useAxiosGet({
     method: 'get',
     url: `users/me`,
   });
