@@ -40,6 +40,10 @@
   border-radius: 50%;
 }
 
+.student-user-icon img {
+  width: 100%;
+}
+
 .student-dashboard-header-details {
   display: flex;
   justify-content: space-between;
