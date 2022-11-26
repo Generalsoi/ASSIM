@@ -3,18 +3,32 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
-
 import { useDispatch, useSelector } from 'react-redux';
-import { registerReq, } from '../../../redux/auth/AuthActions';
-import 'react-toastify/dist/ReactToastify.css';
+import { registerReq, clearErrors, clearState } from '../../../redux/auth/AuthActions';
 import BackdropLoader from '../../Loader/BackdropLoader';
+import useAlert from "../../../customHooks/useAlert.js";
 
 const SignUpPageOne = ({ onContinue }) => {
+  const alert = useAlert();
   const dispatch = useDispatch();
-
-  const { loading } = useSelector((state) => state.userRegister);
-
   const classesAvailable = ["Primary 5", "Primary 6", "JSS1", "JSS3"];
+  const { loading, error, success } = useSelector((state) => state.userRegister);
+  const [regData, setRegData] = React.useState({});
+
+  React.useEffect(() => {
+    if (error) {
+      alert('Error', error, 'error', 'Ok', () => {
+        dispatch(clearErrors());
+      });
+    }
+    if (success) {
+      alert('Success', "Account created successfully", 'success', 'Continue', () => {
+        dispatch(clearState());
+        onContinue(regData, 1);
+      });
+    }
+  }, [error, success, onContinue, regData, alert, dispatch]);
+
 
   const {
     register,
@@ -26,7 +40,7 @@ const SignUpPageOne = ({ onContinue }) => {
 
   const onSubmit = (data) => {
     dispatch(registerReq(data));
-    onContinue(data, 1);
+    setRegData(data);
   };
 
   return (
