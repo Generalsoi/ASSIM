@@ -1,10 +1,13 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./SignIn.css";
 import Logo from "../../assets/images/Logo.png";
+import { accessToken, apiEndpoint } from "../../config";
+import axios from "axios";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -13,8 +16,30 @@ const SignIn = () => {
     criteriaMode: "all",
   });
 
-  const onSubmit = () => {
-    Navigate("/dashboard");
+  const onSubmit = async (data) => {
+    const user = {
+      "email": data.email,
+      "password": data.password
+    };
+    try {
+      const response = await axios({
+        method: 'post',
+        url: `${apiEndpoint}auth/new?access_token=${accessToken}`,
+        data: user,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      if (response.data) {
+        localStorage.setItem("userInfo", JSON.stringify(response.data));
+        navigate("/dashboard")
+      } else {
+        console.log("Invalid Login attempt")
+      }
+      // response.data ? navigate("/dashboard") : console.log("Invalid Login attempt")
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (
@@ -38,6 +63,7 @@ const SignIn = () => {
                 })}
                 type="email"
                 placeholder="Enter your email"
+                name="email"
               />
               {errors.email && (
                 <p
@@ -57,20 +83,11 @@ const SignIn = () => {
               <label htmlFor="password">Password</label>
               <input
                 {...register("password", {
-                  required: "Please enter your password",
-                  minLength: {
-                    value: 8,
-                    message: "Your password must exceed 8 characters",
-                  },
-                  pattern: {
-                    value:
-                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d](?=.*?[#?!.,@$%^&*-]).{8,}$/,
-                    message:
-                      "Your password must include at least one lowercase letter, one uppercase letter, one number and one special character",
-                  },
+                  required: "Please enter your password"
                 })}
                 type="password"
                 placeholder="........."
+                name="password"
               />
               {errors.password && (
                 <p
@@ -95,9 +112,7 @@ const SignIn = () => {
               <a href="/forgot-password">Forgot password</a>
             </div>
             <div className="signin-form-btn">
-              <Link to="/dashboard">
-                <button type="submit">Sign in</button>
-              </Link>
+              <button type="submit">Sign in</button>
             </div>
           </form>
         </div>

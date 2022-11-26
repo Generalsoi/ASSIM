@@ -27,12 +27,19 @@ export const registerReq = (body) => async (dispatch) => {
       },
     };
 
+    body = {
+      ...body,
+      "name": body.firstname + " " + body.lastname,
+      "profileType": "student"
+    }
     const { data } = await axios.post(`${apiEndpoint}users?access_token=${accessToken}`, body, config);
 
     dispatch({
       type: USER_REGISTER_SUCCESS,
       payload: data,
     });
+    localStorage.setItem('token', data.token)
+    localStorage.setItem('userId', data.user.id)
 
   } catch (error) {
     dispatch({
@@ -52,9 +59,13 @@ export const createStudent = (body) => async (dispatch, getState) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        AUTHORIZATION: `Bearer ${body.token}`,
+        AUTHORIZATION: `Bearer ${localStorage.getItem('token')}`,
       },
     };
+    body = {
+      ...body,
+      "userId": localStorage.getItem('userId')
+    }
 
     const { data } = await axios.post(`${apiEndpoint}students`, body, config);
 
@@ -62,6 +73,9 @@ export const createStudent = (body) => async (dispatch, getState) => {
       type: CREATE_STUDENT_SUCCESS,
       payload: data,
     });
+
+    localStorage.removeItem("token")
+    localStorage.removeItem("userId")
 
   } catch (error) {
     dispatch({
@@ -78,13 +92,7 @@ export const login = (body) => async (dispatch) => {
       type: USER_LOGIN_REQUEST,
     });
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-
-    const { data } = await axios.post(`${apiEndpoint}auth?access_token=${accessToken}`, body, config);
+    const { data } = await axios.post(`${apiEndpoint}auth/new?access_token=${accessToken}`, body);
 
     dispatch({
       type: USER_LOGIN_SUCCESS,

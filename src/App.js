@@ -10,6 +10,7 @@ import Schedule from "./components/Dashboard/Content/Schedule/Schedule";
 import Settings from "./components/Dashboard/Content/Settings/Settings/Settings";
 import Achievements from "./components/Dashboard/Content/Achievements/Achievements";
 import Documents from "./components/Dashboard/Content/Documents/Documents";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="documents" element={<Documents />} />
         <Route path="schedule" element={<Schedule />} />
         <Route path="sign-in" element={<SignIn />} />
+        <Route path="forgot-password" element={<ForgotPassword />} />
       </Routes>
     </Router>
   );

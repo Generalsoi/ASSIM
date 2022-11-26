@@ -5,32 +5,14 @@ import "./SignUpPageOne.css";
 import Logo from "../../../assets/images/Logo.png";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { clearErrors, clearState, registerReq, } from '../../../redux/auth/AuthActions';
-import { toast } from 'react-toastify';
+import { registerReq, } from '../../../redux/auth/AuthActions';
 import 'react-toastify/dist/ReactToastify.css';
 import BackdropLoader from '../../Loader/BackdropLoader';
 
 const SignUpPageOne = ({ onContinue }) => {
   const dispatch = useDispatch();
 
-  const [token, setToken] = React.useState("");
-  const [userId, setUserId] = React.useState("");
-
-  const { loading, error, success, registerData } = useSelector((state) => state.userRegister);
-
-  React.useEffect(() => {
-    if (success) {
-      setToken(registerData.token);
-      setUserId(registerData.userId);
-      toast.success("Account created successfully");
-      dispatch(clearState());
-    }
-
-    if (error) {
-      toast.error(error);
-      dispatch(clearErrors());
-    }
-  }, [success, registerData, error, dispatch]);
+  const { loading } = useSelector((state) => state.userRegister);
 
   const classesAvailable = ["Primary 5", "Primary 6", "JSS1", "JSS3"];
 
@@ -49,7 +31,7 @@ const SignUpPageOne = ({ onContinue }) => {
 
   return (
     <>
-    {loading && <BackdropLoader />}
+      {loading && <BackdropLoader />}
       <div className="signup-pageone">
         <div className="header">
           <Link to="/">
@@ -260,12 +242,6 @@ const SignUpPageOne = ({ onContinue }) => {
                     </p>
                   )}
                 </div>
-
-                <input type="hidden" value={token} name="token"  
-                {...register("token", { required: true })} />
-                
-                <input type="hidden" value={userId} name="userId"
-                {...register("userId", { required: true })} />
 
                 <div className="form-one-div">
                   <button type="submit">Next</button>

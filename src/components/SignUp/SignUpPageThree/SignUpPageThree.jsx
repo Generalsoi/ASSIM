@@ -14,6 +14,7 @@ const SignUpPageThree = ({ onContinue }) => {
   } = useForm({ criteriaMode: "all" });
 
   const onSubmit = (data) => {
+    console.log(data)
     onContinue(data, 3);
   };
 
