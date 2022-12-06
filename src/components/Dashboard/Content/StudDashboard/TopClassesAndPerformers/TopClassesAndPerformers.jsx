@@ -18,63 +18,7 @@ const TopClassesAndPerformers = () => {
       noOfChapters: 1,
       image: <img src={TopClassOne} alt="top class one" />,
       playId: 100,
-    },
-    {
-      id: 2,
-      title: "ASSIM",
-      noOfChapters: 2,
-      image: <img src={TopClassTwo} alt="top class two" />,
-      playId: 200,
-    },
-    {
-      id: 3,
-      title: "ASSIM",
-      noOfChapters: 3,
-      image: <img src={TopClassThree} alt="top class three" />,
-      playId: 300,
-    },
-    {
-      id: 4,
-      title: "Ms. Faith Okeke",
-      noOfChapters: 4,
-      image: <img src={TopClassFour} alt="top class four" />,
-      playId: 400,
-    },
-    {
-      id: 5,
-      title: "Ms. Faith Okeke",
-      noOfChapters: 5,
-      image: <img src={TopClassFive} alt="top class five" />,
-      playId: 500,
-    },
-    {
-      id: 6,
-      title: "Ms. Faith Okeke",
-      noOfChapters: 6,
-      image: <img src={TopClassSix} alt="top class six" />,
-      playId: 600,
-    },
-    {
-      id: 7,
-      title: "Ms. Faith Okeke",
-      noOfChapters: 6,
-      image: <img src={TopClassSix} alt="top class six" />,
-      playId: 700,
-    },
-    {
-      id: 8,
-      title: "Ms. Faith Okeke",
-      noOfChapters: 6,
-      image: <img src={TopClassSix} alt="top class six" />,
-      playId: 800,
-    },
-    {
-      id: 9,
-      title: "Ms. Faith Okeke",
-      noOfChapters: 6,
-      image: <img src={TopClassSix} alt="top class six" />,
-      playId: 900,
-    },
+    }
   ];
 
   return (
@@ -90,14 +34,14 @@ const TopClassesAndPerformers = () => {
                 id={content.id}
                 width="100%"
                 height="100%"
-                // loop
-                // onMouseOver={(event) => event.target.play()}
-                // onMouseOut={(event) => event.target.pause()}
+              // loop
+              // onMouseOver={(event) => event.target.play()}
+              // onMouseOut={(event) => event.target.pause()}
               >
                 <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
               </video>
-              <div className="video_text" 
-               id={content.playId}
+              <div className="video_text"
+                id={content.playId}
               >
                 <h5>Intro Tech</h5>
 
@@ -111,7 +55,7 @@ const TopClassesAndPerformers = () => {
                       video.onplaying = () => {
                         video.controls = true;
                       };
-                      
+
                       // hide text when video is playing
                       const videoText = document.getElementById(content.playId);
                       videoText.style.display = "none";
@@ -120,13 +64,13 @@ const TopClassesAndPerformers = () => {
                       video.addEventListener("ended", () => {
                         videoText.style.display = "flex";
                       });
-                      
+
                       // show text when video is paused
                       video.addEventListener("pause", () => {
                         videoText.style.display = "flex";
                         video.controls = false;
                       });
-                      
+
                     }}
                   />
                 </div>

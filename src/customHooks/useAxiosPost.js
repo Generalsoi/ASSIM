@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { BACKEND_BASE_URL } from '../backendUrl';
+import { apiEndpoint } from "../config";
 
-axios.defaults.baseURL = `${BACKEND_BASE_URL}`;
+axios.defaults.baseURL = `${apiEndpoint}`;
 
 const useAxiosPost = ({ url, method, body, headers }) => {
     

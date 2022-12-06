@@ -41,7 +41,7 @@ const StudentDashboardHeader = () => {
 
         <div className="student-detail">
           <img
-            alt="user-icon"
+            alt="user"
             className="student-user-icon"
             src={userProfile.picture}
           />

@@ -5,7 +5,7 @@ import JsonImg from "../../../../assets/images/bxs-file-json.png";
 import TxtImg from "../../../../assets/images/bxs-file-txt.png";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 
-const NewDocuments = () => {
+const NewDocuments = ({documents}) => {
   const newDocumentContents = [
     {
       id: 1,
@@ -41,7 +41,7 @@ const NewDocuments = () => {
     <React.Fragment>
       <h5 className="documents-section-heading">New Documents</h5>
       <div className="documents">
-        {newDocumentContents.map((content) => (
+        {documents && documents.map((content) => (
           <div className="document" key={content.id}>
             <div className="document-img">
               <img src={content.image} alt="" />
