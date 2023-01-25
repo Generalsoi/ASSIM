@@ -24,7 +24,7 @@ const Settings = () => {
         <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
       </div>
       <div className="content">
-        <div class="settings">
+        <div className="settings">
           <h4>Settings</h4>
 
           <div className="settings-contents">
