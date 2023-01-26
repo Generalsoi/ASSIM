@@ -10,16 +10,22 @@ import TopClassSix from "../../../../../assets/images/topclasssix.png";
 import Avatar from "../../../../../assets/images/Avatar.png";
 import Play from "../../../../../assets/images/play.png";
 
-const TopClassesAndPerformers = () => {
-  const topClassesContent = [
-    {
-      id: 1,
-      title: "ASSIM",
-      noOfChapters: 1,
-      image: <img src={TopClassOne} alt="top class one" />,
-      playId: 100,
-    }
-  ];
+import PersonIcon from "@mui/icons-material/Person";
+import ClassOneImg from "../../../../../assets/images/classone.png";
+import { getPostedDate } from "../../../../../functions";
+
+const TopClassesAndPerformers = ({ classes }) => {
+  console.log(classes, 'calsses')
+
+  // const topClassesContent = [
+  //   {
+  //     id: 1,
+  //     title: "ASSIM",
+  //     noOfChapters: 1,
+  //     image: <img src={TopClassOne} alt="top class one" />,
+  //     playId: 100,
+  //   }
+  // ];
 
   return (
     <div className="topClassesAndPerformers">
@@ -28,7 +34,31 @@ const TopClassesAndPerformers = () => {
 
         <div className="top-classes-div">
 
-          {topClassesContent.map((content) => (
+
+
+          {/* <div className="single-classes"> */}
+            {classes && classes.map((content) => (
+              <div className="single-class" key={content.id}>
+                <div className="class-image">
+                  <img src={ClassOneImg} alt='class' />
+                </div>
+                <h5 className="class-title">{content.name}</h5>
+                <div className="class-tutor">
+                  <div>
+                    <PersonIcon className="person-icon" />
+                    <p className="class-tutor-name">{content.tutor}</p>
+                  </div>
+                  <div className="class-length">
+                    <p>{getPostedDate(content.createdAt)}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          {/* </div> */}
+
+
+
+          {/* {topClassesContent.map((content) => (
             <div className="top_class_video" key={content.id}>
               <video
                 id={content.id}
@@ -81,7 +111,7 @@ const TopClassesAndPerformers = () => {
                 </div>
               </div>
             </div>
-          ))}
+          ))} */}
 
           {/* {topClassesContent.map((content) => (
             <div className="top-classes-content" key={content.id}>

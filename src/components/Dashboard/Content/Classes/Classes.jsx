@@ -22,10 +22,10 @@ const Classes = () => {
   const handleClick = () => {
     setOpen(!open);
   };
-
+  const userId = localStorage.getItem('userInfo');
   const { response, loading } = useAxiosGet2({
     method: 'get',
-    url: `classes?access_token=${accessToken}`,
+    url: `myCurrentClasses?userId=${userId.id}&access_token=${accessToken}`,
   });
 
   useEffect(() => {
