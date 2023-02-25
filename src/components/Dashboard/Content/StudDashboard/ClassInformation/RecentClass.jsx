@@ -2,9 +2,9 @@ import React from "react";
 import "./RecentClass.css";
 import PersonIcon from "@mui/icons-material/Person";
 import ClassOneImg from "../../../../../assets/images/classone.png";
-import ClassTwoImg from "../../../../../assets/images/classtwo.png";
-import ClassThreeImg from "../../../../../assets/images/classthree.png";
-import ClassFourImg from "../../../../../assets/images/classfour.png";
+// import ClassTwoImg from "../../../../../assets/images/classtwo.png";
+// import ClassThreeImg from "../../../../../assets/images/classthree.png";
+// import ClassFourImg from "../../../../../assets/images/classfour.png";
 import { getPostedDate } from "../../../../../functions";
 import { Link } from "react-router-dom";
 
