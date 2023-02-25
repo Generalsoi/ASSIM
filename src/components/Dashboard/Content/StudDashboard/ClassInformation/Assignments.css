@@ -159,6 +159,18 @@
     outline: none;
 }
 
+.upload_assignment_form_item textarea {
+    border: 1px solid #EFF0F7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #14142B;
+    outline: none;
+}
+
 .upload_assignment_form_item select {
     border: 1px solid #EFF0F7;
     box-sizing: border-box;
@@ -177,6 +189,10 @@
 }
 
 .upload_assignment_form_item select:focus {
+    border: 1px solid #7777F9;
+}
+
+.upload_assignment_form_item textarea:focus {
     border: 1px solid #7777F9;
 }
 
@@ -243,9 +259,26 @@
 }
 
 
+.upload_web{
+    display: flex;
+}
+
+.upload_mobile{
+    display: none;
+}
+
+
 @media screen and (max-width: 450px) {
     .asignment-item-list {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .upload_web{
+        display: none;
+    }
+
+    .upload_mobile{
+        display: flex;
     }
   }

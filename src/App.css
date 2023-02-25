@@ -54,9 +54,6 @@ a{
 
 /* Responsive styling for the dashboard */
 @media screen and (max-width: 450px) {
-  *{
-    zoom: 0.98;
-  }
   .sidebar {
     display: none;
     position: absolute;

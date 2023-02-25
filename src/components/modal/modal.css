@@ -50,5 +50,7 @@
         padding: 15px;
         gap: 20px;
     }
-
+    .modal_header button{
+        bottom: -21px;
+    }
 }

@@ -11,6 +11,7 @@ import Settings from "./components/Dashboard/Content/Settings/Settings/Settings"
 import Achievements from "./components/Dashboard/Content/Achievements/Achievements";
 import Documents from "./components/Dashboard/Content/Documents/Documents";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import ClassVideos from "./components/Dashboard/Content/Classes/ClassVideos";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="schedule" element={<Schedule />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="forgot-password" element={<ForgotPassword />} />
+        <Route path="/class-videos" element={<ClassVideos />} />
       </Routes>
     </Router>
   );

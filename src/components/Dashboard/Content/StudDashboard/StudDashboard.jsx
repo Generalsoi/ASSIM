@@ -34,9 +34,10 @@ const StudDashboard = () => {
   const [classes, setClasses] = useState([]);
 
   const userId = localStorage.getItem('userInfo');
-  const { response: response2, loading: loading2 } = useAxiosGet2({
+  const id = JSON.parse(userId).user.id;
+  const { response: response2 } = useAxiosGet2({
     method: 'get',
-    url: `myCurrentClasses?userId=${userId.id}&access_token=${accessToken}`,
+    url: `myCurrentClasses?userId=${id}&access_token=${accessToken}`,
   });
 
   useEffect(() => {

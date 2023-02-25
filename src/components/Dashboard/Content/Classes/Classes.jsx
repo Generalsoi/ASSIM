@@ -23,9 +23,10 @@ const Classes = () => {
     setOpen(!open);
   };
   const userId = localStorage.getItem('userInfo');
+  const id = JSON.parse(userId).user.id;
   const { response, loading } = useAxiosGet2({
     method: 'get',
-    url: `myCurrentClasses?userId=${userId.id}&access_token=${accessToken}`,
+    url: `myCurrentClasses?userId=${id}&access_token=${accessToken}`,
   });
 
   useEffect(() => {

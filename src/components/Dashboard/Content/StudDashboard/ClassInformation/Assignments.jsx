@@ -1,59 +1,64 @@
 import React from "react";
 import './Assignments.css';
 import Assignment from "../../../../modal/Assignment";
-import Pdf from "../../../../../assets/images/pdf.png";
+// import Pdf from "../../../../../assets/images/pdf.png";
+import { formatDate } from "../../../../../functions";
+import SimpleFileUpload from 'react-simple-file-upload';
+
+import { accessToken } from "../../../../../config";
+import useAxiosPost from "../../../../../customHooks/useAxiosPost";
+import BackdropLoader from ".././../../../Loader/BackdropLoader";
+import useAlert from "../../../../../customHooks/useAlert";
 
 const Assignments = ({ assignments }) => {
+  const alert = useAlert();
 
   const [show, setShow] = React.useState(false);
-  const [file, setFile] = React.useState(null);
-  const [fileToDisplay, setFileToDisplay] = React.useState(null);
 
-  const assigmentContents = [
-    {
-      id: "1",
-      subject: "Mathematics",
-      tutor: "Mr. Bankole Esan",
-      date_given: "Tues, 16, 8:00 AM",
-      submission_date: "Tues, 23, 10:10 AM",
-      status: 'Submitted'
-    },
-    {
-      id: "2",
-      subject: "Mathematics",
-      tutor: "Mr. Bankole Esan",
-      date_given: "Tues, 16, 8:00 AM",
-      submission_date: "Tues, 23, 10:10 AM",
-      status: 'Submitted'
-    },
-    {
-      id: "3",
-      subject: "Mathematics",
-      tutor: "Mr. Bankole Esan",
-      date_given: "Tues, 16, 8:00 AM",
-      submission_date: "Tues, 23, 10:10 AM",
-      status: 'Unattended'
-    },
-    {
-      id: "4",
-      subject: "Mathematics",
-      tutor: "Mr. Bankole Esan",
-      date_given: "Tues, 16, 8:00 AM",
-      submission_date: "Tues, 23, 10:10 AM",
-      status: 'Unattended'
-    },
-    {
-      id: "4",
-      subject: "Mathematics",
-      tutor: "Mr. Bankole Esan",
-      date_given: "Tues, 16, 8:00 AM",
-      submission_date: "Tues, 23, 10:10 AM",
-      status: 'Unattended'
-    },
-  ];
+  const [name, setName] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [answerSubmitted, setAnswerSubmitted] = React.useState('');
+  const [uploadedAnswerUrl, setUploadedAnswerUrl] = React.useState('');
+  const [classId, setClassId] = React.useState('');
+  const [teacherId, setTeacherId] = React.useState('');
+  const [assignmentId, setAssignmentId] = React.useState('');
+
+  const handleFile = (url) => {
+    setUploadedAnswerUrl(url);
+  };
+
+  const { loading, error, success, fetchData } = useAxiosPost({
+    method: "post",
+    url: "assignments?access_token=" + accessToken,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      teacherId,
+      assignmentId,
+      name,
+      description,
+      classId,
+      uploadedAnswerUrl,
+    }),
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchData();
+  };
+  React.useEffect(() => {
+    if (error) {
+      alert("Error", error, "error", "Ok", () => { });
+    }
+    if (success) {
+      alert("Success", "Asignment Submitted Successfully", "success", "Ok", () => {
+        setShow(false);
+        window.location.href = "/dashboard";
+      });
+    }
+  }, [error, alert, success]);
 
   return (
     <>
+      {loading && <BackdropLoader />}
       <div className="assingments-div">
         {assignments && assignments.length === 0 ? 'empty'
           :
@@ -74,7 +79,7 @@ const Assignments = ({ assignments }) => {
                 <div className="assingment-item-body">
                   <div className="assingment-dates">
                     <p>Date given</p>
-                    <h6>{content.date_given}</h6>
+                    <h6>{formatDate(content.createdAt)}</h6>
                   </div>
                   <div className="assingment-dates">
                     <p>Submission date</p>
@@ -83,11 +88,18 @@ const Assignments = ({ assignments }) => {
                 </div>
                 <div className="assignment-footer">
                   <div className={`assigment-status ${content.status === "Submitted" ? "submitted" : "unattended"}`}>
-                    <p>{content.status}</p>
+                    <p>Unattended</p>
                   </div>
 
                   <div>
-                    <button className="upload_assignment" onClick={() => setShow(true)}>
+                    <button className="upload_assignment" onClick={() => {
+                      setShow(true);
+                      setName(content.name);
+                      // setDescription(content.description);
+                      setClassId(content.classId);
+                      setTeacherId(content.ownerId);
+                      setAssignmentId(content.id);
+                    }}>
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 4.5125L7 1.5125L10 4.5125" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M7 1.5125V9.5125" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -115,58 +127,72 @@ const Assignments = ({ assignments }) => {
 
             <div className="upload_assignment_form">
               <div className="upload_assignment_form_item">
-                <label htmlFor="subject">Subject</label>
-                <input type="text" name="subject" id="subject" />
+                <label htmlFor="name">Name</label>
+                <input type="text" name="subject" id="subject"
+                  value={name}
+                  readOnly
+                />
               </div>
 
               <div className="upload_assignment_form_item">
-                <label htmlFor="tutor">Subject Teacher</label>
-                <select name="" id="">
-                  <option value="">Mr. John Doe</option>
-                  <option value="">Mr. John Doe</option>
-                  <option value="">Mr. John Doe</option>
-                  <option value="">Mr. John Doe</option>
-                </select>
+                <label htmlFor="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="2"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                ></textarea>
               </div>
+
+              <div className="upload_assignment_form_item">
+                <label htmlFor="answerSubmitted">Answer</label>
+                <textarea name="answerSubmitted" id="answerSubmitted" cols="30" rows="2"
+                  value={answerSubmitted}
+                  onChange={(e) => setAnswerSubmitted(e.target.value)}
+                ></textarea>
+              </div>
+
             </div>
 
 
 
             {/* select file */}
-            <div className="upload_assignment_form_item">
-              <label htmlFor="file" className="upload_label">
-                <img src={Pdf} alt="" width={28} />
-                {fileToDisplay && (
-                  <p>{fileToDisplay}</p>
-                )}
+            <div className="upload_web">
+              <SimpleFileUpload
+                apiKey="7bf4c18d68525050ba347ff1ccf39e6c"
+                onSuccess={handleFile}
+                preview={true}
+                width="400"
+                height="100"
+              />
+            </div>
 
-                {fileToDisplay ? (
-                  <span>Change File</span>
-                ) : (
-                  <span>Select File</span>
-                )}
-
-                <input type="file"
-                  name="file"
-                  id="file"
-                  onChange={(e) => {
-                    setFile(e.target.files[0]);
-                    setFileToDisplay(e.target.files[0].name);
-                  }}
-                />
-              </label>
+            <div className="upload_mobile">
+              <SimpleFileUpload
+                apiKey="7bf4c18d68525050ba347ff1ccf39e6c"
+                onSuccess={handleFile}
+                preview={true}
+                width="310"
+                height="100"
+              />
             </div>
 
             {/* cancel and submit btn */}
             <div className="upload_assignment_form_item_btn">
               <button className="cancel_ass" onClick={() => {
                 setShow(false);
-                setFileToDisplay("");
-                setFile(null);
+                setName("");
+                setDescription("");
+                setClassId("");
+                setTeacherId("");
+                setAssignmentId("");
+                setAnswerSubmitted("");
+                setUploadedAnswerUrl("");
               }}>
                 Cancel
               </button>
-              <button className="submit_ass">
+              <button className="submit_ass" onClick={handleSubmit}
+                disabled={answerSubmitted === "" || uploadedAnswerUrl === "" || description === "" ? true : false}
+                style={{ backgroundColor: answerSubmitted === "" || uploadedAnswerUrl === "" || description === "" ? "#ccc" : "#7777F9" }}
+              >
                 Submit Assignment
               </button>
             </div>
