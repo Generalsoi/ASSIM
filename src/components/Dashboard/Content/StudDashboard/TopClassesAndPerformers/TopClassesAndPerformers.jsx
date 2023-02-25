@@ -1,25 +1,21 @@
 import React from "react";
 import "./TopClassesAndPerformers.css";
 // import PersonIcon from "@mui/icons-material/Person";
-import TopClassOne from "../../../../../assets/images/topclassone.png";
-import TopClassTwo from "../../../../../assets/images/topclasstwo.png";
-import TopClassThree from "../../../../../assets/images/topclassthree.png";
-import TopClassFour from "../../../../../assets/images/topclassfour.png";
-import TopClassFive from "../../../../../assets/images/topclassfive.png";
-import TopClassSix from "../../../../../assets/images/topclasssix.png";
+// import TopClassOne from "../../../../../assets/images/topclassone.png";
+// import TopClassTwo from "../../../../../assets/images/topclasstwo.png";
+// import TopClassThree from "../../../../../assets/images/topclassthree.png";
+// import TopClassFour from "../../../../../assets/images/topclassfour.png";
+// import TopClassFive from "../../../../../assets/images/topclassfive.png";
+// import TopClassSix from "../../../../../assets/images/topclasssix.png";
+// import Play from "../../../../../assets/images/play.png";
 import Avatar from "../../../../../assets/images/Avatar.png";
-import Play from "../../../../../assets/images/play.png";
 
-const TopClassesAndPerformers = () => {
-  const topClassesContent = [
-    {
-      id: 1,
-      title: "ASSIM",
-      noOfChapters: 1,
-      image: <img src={TopClassOne} alt="top class one" />,
-      playId: 100,
-    }
-  ];
+import PersonIcon from "@mui/icons-material/Person";
+import ClassOneImg from "../../../../../assets/images/classone.png";
+import { getPostedDate } from "../../../../../functions";
+import { Link } from "react-router-dom";
+
+const TopClassesAndPerformers = ({ classes }) => {
 
   return (
     <div className="topClassesAndPerformers">
@@ -28,7 +24,31 @@ const TopClassesAndPerformers = () => {
 
         <div className="top-classes-div">
 
-          {topClassesContent.map((content) => (
+
+
+          {/* <div className="single-classes"> */}
+          {classes && classes.map((content) => (
+            <Link to={`/class-videos?video=${content.classId}`} key={content.id} className="single-class" >
+              <div className="class-image">
+                <img src={ClassOneImg} alt='class' />
+              </div>
+              <h5 className="class-title">{content.name}</h5>
+              <div className="class-tutor">
+                <div>
+                  <PersonIcon className="person-icon" />
+                  <p className="class-tutor-name">{content.tutor}</p>
+                </div>
+                <div className="class-length">
+                  <p>{getPostedDate(content.createdAt)}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+          {/* </div> */}
+
+
+
+          {/* {topClassesContent.map((content) => (
             <div className="top_class_video" key={content.id}>
               <video
                 id={content.id}
@@ -81,7 +101,7 @@ const TopClassesAndPerformers = () => {
                 </div>
               </div>
             </div>
-          ))}
+          ))} */}
 
           {/* {topClassesContent.map((content) => (
             <div className="top-classes-content" key={content.id}>

@@ -14,7 +14,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading: loadingUserLogin, error: errorUserLogin, success: successUserLogin, userData } = useSelector((state) => state.userLogin);
-  console.log(userData, 'userData');
+  
   let profileType = userData?.user?.profileType;
   useEffect(() => {
     if (errorUserLogin) {
